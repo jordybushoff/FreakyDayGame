@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: 01e140853e436c043b5e42fc7506e8ec
+timeCreated: 1485779616
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Blades
+    100002: Cube
+    100004: EndTail
+    100006: Eye_left
+    100008: Eye_right
+    100010: Head
+    100012: Head 1
+    100014: Horn
+    100016: Horn1
+    100018: pCube17
+    100020: pCube17 1
+    100022: pCube17 10
+    100024: pCube17 11
+    100026: pCube17 12
+    100028: pCube17 13
+    100030: pCube17 14
+    100032: pCube17 15
+    100034: pCube17 2
+    100036: pCube17 3
+    100038: pCube17 4
+    100040: pCube17 5
+    100042: pCube17 6
+    100044: pCube17 7
+    100046: pCube17 8
+    100048: pCube17 9
+    100050: pPyramid53
+    100052: pPyramid53 1
+    100054: pPyramid53 10
+    100056: pPyramid53 11
+    100058: pPyramid53 12
+    100060: pPyramid53 13
+    100062: pPyramid53 14
+    100064: pPyramid53 15
+    100066: pPyramid53 2
+    100068: pPyramid53 3
+    100070: pPyramid53 4
+    100072: pPyramid53 5
+    100074: pPyramid53 6
+    100076: pPyramid53 7
+    100078: pPyramid53 8
+    100080: pPyramid53 9
+    100082: pPyramid54
+    100084: pPyramid54 1
+    100086: pPyramid54 10
+    100088: pPyramid54 11
+    100090: pPyramid54 12
+    100092: pPyramid54 13
+    100094: pPyramid54 14
+    100096: pPyramid54 15
+    100098: pPyramid54 2
+    100100: pPyramid54 3
+    100102: pPyramid54 4
+    100104: pPyramid54 5
+    100106: pPyramid54 6
+    100108: pPyramid54 7
+    100110: pPyramid54 8
+    100112: pPyramid54 9
+    100114: pPyramid55
+    100116: pPyramid55 1
+    100118: pPyramid55 10
+    100120: pPyramid55 11
+    100122: pPyramid55 12
+    100124: pPyramid55 13
+    100126: pPyramid55 14
+    100128: pPyramid55 15
+    100130: pPyramid55 2
+    100132: pPyramid55 3
+    100134: pPyramid55 4
+    100136: pPyramid55 5
+    100138: pPyramid55 6
+    100140: pPyramid55 7
+    100142: pPyramid55 8
+    100144: pPyramid55 9
+    100146: pPyramid56
+    100148: pPyramid56 1
+    100150: pPyramid56 10
+    100152: pPyramid56 11
+    100154: pPyramid56 12
+    100156: pPyramid56 13
+    100158: pPyramid56 14
+    100160: pPyramid56 15
+    100162: pPyramid56 2
+    100164: pPyramid56 3
+    100166: pPyramid56 4
+    100168: pPyramid56 5
+    100170: pPyramid56 6
+    100172: pPyramid56 7
+    100174: pPyramid56 8
+    100176: pPyramid56 9
+    100178: pPyramid57
+    100180: pPyramid58
+    100182: pPyramid59
+    100184: pPyramid60
+    100186: pPyramid61
+    100188: pPyramid62
+    100190: Snake1
+    100192: Tail1
+    100194: Tail10
+    100196: Tail11
+    100198: Tail12
+    100200: Tail13
+    100202: Tail14
+    100204: Tail15
+    100206: Tail2
+    100208: Tail3
+    100210: Tail4
+    100212: Tail5
+    100214: Tail6
+    100216: Tail7
+    100218: Tail8
+    100220: Tail9
+    100222: //RootNode
+    400000: Blades
+    400002: Cube
+    400004: EndTail
+    400006: Eye_left
+    400008: Eye_right
+    400010: Head
+    400012: Head 1
+    400014: Horn
+    400016: Horn1
+    400018: pCube17
+    400020: pCube17 1
+    400022: pCube17 10
+    400024: pCube17 11
+    400026: pCube17 12
+    400028: pCube17 13
+    400030: pCube17 14
+    400032: pCube17 15
+    400034: pCube17 2
+    400036: pCube17 3
+    400038: pCube17 4
+    400040: pCube17 5
+    400042: pCube17 6
+    400044: pCube17 7
+    400046: pCube17 8
+    400048: pCube17 9
+    400050: pPyramid53
+    400052: pPyramid53 1
+    400054: pPyramid53 10
+    400056: pPyramid53 11
+    400058: pPyramid53 12
+    400060: pPyramid53 13
+    400062: pPyramid53 14
+    400064: pPyramid53 15
+    400066: pPyramid53 2
+    400068: pPyramid53 3
+    400070: pPyramid53 4
+    400072: pPyramid53 5
+    400074: pPyramid53 6
+    400076: pPyramid53 7
+    400078: pPyramid53 8
+    400080: pPyramid53 9
+    400082: pPyramid54
+    400084: pPyramid54 1
+    400086: pPyramid54 10
+    400088: pPyramid54 11
+    400090: pPyramid54 12
+    400092: pPyramid54 13
+    400094: pPyramid54 14
+    400096: pPyramid54 15
+    400098: pPyramid54 2
+    400100: pPyramid54 3
+    400102: pPyramid54 4
+    400104: pPyramid54 5
+    400106: pPyramid54 6
+    400108: pPyramid54 7
+    400110: pPyramid54 8
+    400112: pPyramid54 9
+    400114: pPyramid55
+    400116: pPyramid55 1
+    400118: pPyramid55 10
+    400120: pPyramid55 11
+    400122: pPyramid55 12
+    400124: pPyramid55 13
+    400126: pPyramid55 14
+    400128: pPyramid55 15
+    400130: pPyramid55 2
+    400132: pPyramid55 3
+    400134: pPyramid55 4
+    400136: pPyramid55 5
+    400138: pPyramid55 6
+    400140: pPyramid55 7
+    400142: pPyramid55 8
+    400144: pPyramid55 9
+    400146: pPyramid56
+    400148: pPyramid56 1
+    400150: pPyramid56 10
+    400152: pPyramid56 11
+    400154: pPyramid56 12
+    400156: pPyramid56 13
+    400158: pPyramid56 14
+    400160: pPyramid56 15
+    400162: pPyramid56 2
+    400164: pPyramid56 3
+    400166: pPyramid56 4
+    400168: pPyramid56 5
+    400170: pPyramid56 6
+    400172: pPyramid56 7
+    400174: pPyramid56 8
+    400176: pPyramid56 9
+    400178: pPyramid57
+    400180: pPyramid58
+    400182: pPyramid59
+    400184: pPyramid60
+    400186: pPyramid61
+    400188: pPyramid62
+    400190: Snake1
+    400192: Tail1
+    400194: Tail10
+    400196: Tail11
+    400198: Tail12
+    400200: Tail13
+    400202: Tail14
+    400204: Tail15
+    400206: Tail2
+    400208: Tail3
+    400210: Tail4
+    400212: Tail5
+    400214: Tail6
+    400216: Tail7
+    400218: Tail8
+    400220: Tail9
+    400222: //RootNode
+    2300000: Cube
+    2300002: Eye_left
+    2300004: Eye_right
+    2300006: Head 1
+    2300008: Horn
+    2300010: Horn1
+    2300012: pCube17
+    2300014: pCube17 1
+    2300016: pCube17 10
+    2300018: pCube17 11
+    2300020: pCube17 12
+    2300022: pCube17 13
+    2300024: pCube17 14
+    2300026: pCube17 15
+    2300028: pCube17 2
+    2300030: pCube17 3
+    2300032: pCube17 4
+    2300034: pCube17 5
+    2300036: pCube17 6
+    2300038: pCube17 7
+    2300040: pCube17 8
+    2300042: pCube17 9
+    2300044: pPyramid53
+    2300046: pPyramid53 1
+    2300048: pPyramid53 10
+    2300050: pPyramid53 11
+    2300052: pPyramid53 12
+    2300054: pPyramid53 13
+    2300056: pPyramid53 14
+    2300058: pPyramid53 15
+    2300060: pPyramid53 2
+    2300062: pPyramid53 3
+    2300064: pPyramid53 4
+    2300066: pPyramid53 5
+    2300068: pPyramid53 6
+    2300070: pPyramid53 7
+    2300072: pPyramid53 8
+    2300074: pPyramid53 9
+    2300076: pPyramid54
+    2300078: pPyramid54 1
+    2300080: pPyramid54 10
+    2300082: pPyramid54 11
+    2300084: pPyramid54 12
+    2300086: pPyramid54 13
+    2300088: pPyramid54 14
+    2300090: pPyramid54 15
+    2300092: pPyramid54 2
+    2300094: pPyramid54 3
+    2300096: pPyramid54 4
+    2300098: pPyramid54 5
+    2300100: pPyramid54 6
+    2300102: pPyramid54 7
+    2300104: pPyramid54 8
+    2300106: pPyramid54 9
+    2300108: pPyramid55
+    2300110: pPyramid55 1
+    2300112: pPyramid55 10
+    2300114: pPyramid55 11
+    2300116: pPyramid55 12
+    2300118: pPyramid55 13
+    2300120: pPyramid55 14
+    2300122: pPyramid55 15
+    2300124: pPyramid55 2
+    2300126: pPyramid55 3
+    2300128: pPyramid55 4
+    2300130: pPyramid55 5
+    2300132: pPyramid55 6
+    2300134: pPyramid55 7
+    2300136: pPyramid55 8
+    2300138: pPyramid55 9
+    2300140: pPyramid56
+    2300142: pPyramid56 1
+    2300144: pPyramid56 10
+    2300146: pPyramid56 11
+    2300148: pPyramid56 12
+    2300150: pPyramid56 13
+    2300152: pPyramid56 14
+    2300154: pPyramid56 15
+    2300156: pPyramid56 2
+    2300158: pPyramid56 3
+    2300160: pPyramid56 4
+    2300162: pPyramid56 5
+    2300164: pPyramid56 6
+    2300166: pPyramid56 7
+    2300168: pPyramid56 8
+    2300170: pPyramid56 9
+    2300172: pPyramid57
+    2300174: pPyramid58
+    2300176: pPyramid59
+    2300178: pPyramid60
+    2300180: pPyramid61
+    2300182: pPyramid62
+    3300000: Cube
+    3300002: Eye_left
+    3300004: Eye_right
+    3300006: Head 1
+    3300008: Horn
+    3300010: Horn1
+    3300012: pCube17
+    3300014: pCube17 1
+    3300016: pCube17 10
+    3300018: pCube17 11
+    3300020: pCube17 12
+    3300022: pCube17 13
+    3300024: pCube17 14
+    3300026: pCube17 15
+    3300028: pCube17 2
+    3300030: pCube17 3
+    3300032: pCube17 4
+    3300034: pCube17 5
+    3300036: pCube17 6
+    3300038: pCube17 7
+    3300040: pCube17 8
+    3300042: pCube17 9
+    3300044: pPyramid53
+    3300046: pPyramid53 1
+    3300048: pPyramid53 10
+    3300050: pPyramid53 11
+    3300052: pPyramid53 12
+    3300054: pPyramid53 13
+    3300056: pPyramid53 14
+    3300058: pPyramid53 15
+    3300060: pPyramid53 2
+    3300062: pPyramid53 3
+    3300064: pPyramid53 4
+    3300066: pPyramid53 5
+    3300068: pPyramid53 6
+    3300070: pPyramid53 7
+    3300072: pPyramid53 8
+    3300074: pPyramid53 9
+    3300076: pPyramid54
+    3300078: pPyramid54 1
+    3300080: pPyramid54 10
+    3300082: pPyramid54 11
+    3300084: pPyramid54 12
+    3300086: pPyramid54 13
+    3300088: pPyramid54 14
+    3300090: pPyramid54 15
+    3300092: pPyramid54 2
+    3300094: pPyramid54 3
+    3300096: pPyramid54 4
+    3300098: pPyramid54 5
+    3300100: pPyramid54 6
+    3300102: pPyramid54 7
+    3300104: pPyramid54 8
+    3300106: pPyramid54 9
+    3300108: pPyramid55
+    3300110: pPyramid55 1
+    3300112: pPyramid55 10
+    3300114: pPyramid55 11
+    3300116: pPyramid55 12
+    3300118: pPyramid55 13
+    3300120: pPyramid55 14
+    3300122: pPyramid55 15
+    3300124: pPyramid55 2
+    3300126: pPyramid55 3
+    3300128: pPyramid55 4
+    3300130: pPyramid55 5
+    3300132: pPyramid55 6
+    3300134: pPyramid55 7
+    3300136: pPyramid55 8
+    3300138: pPyramid55 9
+    3300140: pPyramid56
+    3300142: pPyramid56 1
+    3300144: pPyramid56 10
+    3300146: pPyramid56 11
+    3300148: pPyramid56 12
+    3300150: pPyramid56 13
+    3300152: pPyramid56 14
+    3300154: pPyramid56 15
+    3300156: pPyramid56 2
+    3300158: pPyramid56 3
+    3300160: pPyramid56 4
+    3300162: pPyramid56 5
+    3300164: pPyramid56 6
+    3300166: pPyramid56 7
+    3300168: pPyramid56 8
+    3300170: pPyramid56 9
+    3300172: pPyramid57
+    3300174: pPyramid58
+    3300176: pPyramid59
+    3300178: pPyramid60
+    3300180: pPyramid61
+    3300182: pPyramid62
+    4300000: Cube
+    4300002: pCube17
+    4300004: pPyramid53
+    4300006: pPyramid54
+    4300008: pPyramid55
+    4300010: pPyramid56
+    4300012: Head
+    4300014: Eye_right
+    4300016: Eye_left
+    4300018: Horn
+    4300020: Horn1
+    4300022: pCube17
+    4300024: pPyramid53
+    4300026: pPyramid54
+    4300028: pPyramid55
+    4300030: pPyramid56
+    4300032: pCube17
+    4300034: pPyramid53
+    4300036: pPyramid54
+    4300038: pPyramid55
+    4300040: pPyramid56
+    4300042: pCube17
+    4300044: pPyramid53
+    4300046: pPyramid54
+    4300048: pPyramid55
+    4300050: pPyramid56
+    4300052: pCube17
+    4300054: pPyramid53
+    4300056: pPyramid54
+    4300058: pPyramid55
+    4300060: pPyramid56
+    4300062: pCube17
+    4300064: pPyramid53
+    4300066: pPyramid54
+    4300068: pPyramid55
+    4300070: pPyramid56
+    4300072: pCube17
+    4300074: pPyramid53
+    4300076: pPyramid54
+    4300078: pPyramid55
+    4300080: pPyramid56
+    4300082: pCube17
+    4300084: pPyramid53
+    4300086: pPyramid54
+    4300088: pPyramid55
+    4300090: pPyramid56
+    4300092: pCube17
+    4300094: pPyramid53
+    4300096: pPyramid54
+    4300098: pPyramid55
+    4300100: pPyramid56
+    4300102: pCube17
+    4300104: pPyramid53
+    4300106: pPyramid54
+    4300108: pPyramid55
+    4300110: pPyramid56
+    4300112: pCube17
+    4300114: pPyramid53
+    4300116: pPyramid54
+    4300118: pPyramid55
+    4300120: pPyramid56
+    4300122: pCube17
+    4300124: pPyramid53
+    4300126: pPyramid54
+    4300128: pPyramid55
+    4300130: pPyramid56
+    4300132: pCube17
+    4300134: pPyramid53
+    4300136: pPyramid54
+    4300138: pPyramid55
+    4300140: pPyramid56
+    4300142: pCube17
+    4300144: pPyramid53
+    4300146: pPyramid54
+    4300148: pPyramid55
+    4300150: pPyramid56
+    4300152: pCube17
+    4300154: pPyramid53
+    4300156: pPyramid54
+    4300158: pPyramid55
+    4300160: pPyramid56
+    4300162: pCube17
+    4300164: pPyramid53
+    4300166: pPyramid54
+    4300168: pPyramid55
+    4300170: pPyramid56
+    4300172: pPyramid57
+    4300174: pPyramid58
+    4300176: pPyramid59
+    4300178: pPyramid60
+    4300180: pPyramid61
+    4300182: pPyramid62
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,9 @@
+
+Problem: I have lost all tags. How can i recover them?
+
+When you upgrading to a newer version of unity, you may need to follow a few steps to reload unity Tags:
+
+1. Open Tag Manager (top left i n inspector)
+2. Create a new tag called "test"
+3. Save and reopen  your project.
+4. Now all tags has been recovered

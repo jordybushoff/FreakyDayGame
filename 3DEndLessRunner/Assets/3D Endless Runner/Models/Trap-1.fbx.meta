@@ -1,0 +1,341 @@
+fileFormatVersion: 2
+guid: 637b82a7b92156c4986763c1738ec48c
+timeCreated: 1485707234
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: group11
+    100002: group3
+    100004: group4
+    100006: group5
+    100008: group6
+    100010: group7
+    100012: group8
+    100014: group9
+    100016: pCube11
+    100018: pCube12
+    100020: pCube12 1
+    100022: pCube12 2
+    100024: pCube12 3
+    100026: pCube12 4
+    100028: pCube13
+    100030: pCube14
+    100032: pCube15
+    100034: pCube16
+    100036: pPyramid28
+    100038: pPyramid29
+    100040: pPyramid30
+    100042: pPyramid31
+    100044: pPyramid32
+    100046: pPyramid32 1
+    100048: pPyramid32 2
+    100050: pPyramid32 3
+    100052: pPyramid32 4
+    100054: pPyramid33
+    100056: pPyramid33 1
+    100058: pPyramid33 2
+    100060: pPyramid33 3
+    100062: pPyramid33 4
+    100064: pPyramid34
+    100066: pPyramid34 1
+    100068: pPyramid34 2
+    100070: pPyramid34 3
+    100072: pPyramid34 4
+    100074: pPyramid35
+    100076: pPyramid35 1
+    100078: pPyramid35 2
+    100080: pPyramid35 3
+    100082: pPyramid35 4
+    100084: pPyramid36
+    100086: pPyramid37
+    100088: pPyramid38
+    100090: pPyramid39
+    100092: pPyramid40
+    100094: pPyramid41
+    100096: pPyramid42
+    100098: pPyramid43
+    100100: pPyramid44
+    100102: pPyramid45
+    100104: pPyramid46
+    100106: pPyramid47
+    100108: pPyramid48
+    100110: pPyramid49
+    100112: pPyramid50
+    100114: pPyramid51
+    100116: pPyramid52
+    100118: transform18
+    100120: transform19
+    100122: transform20
+    100124: transform21
+    100126: //RootNode
+    400000: group11
+    400002: group3
+    400004: group4
+    400006: group5
+    400008: group6
+    400010: group7
+    400012: group8
+    400014: group9
+    400016: pCube11
+    400018: pCube12
+    400020: pCube12 1
+    400022: pCube12 2
+    400024: pCube12 3
+    400026: pCube12 4
+    400028: pCube13
+    400030: pCube14
+    400032: pCube15
+    400034: pCube16
+    400036: pPyramid28
+    400038: pPyramid29
+    400040: pPyramid30
+    400042: pPyramid31
+    400044: pPyramid32
+    400046: pPyramid32 1
+    400048: pPyramid32 2
+    400050: pPyramid32 3
+    400052: pPyramid32 4
+    400054: pPyramid33
+    400056: pPyramid33 1
+    400058: pPyramid33 2
+    400060: pPyramid33 3
+    400062: pPyramid33 4
+    400064: pPyramid34
+    400066: pPyramid34 1
+    400068: pPyramid34 2
+    400070: pPyramid34 3
+    400072: pPyramid34 4
+    400074: pPyramid35
+    400076: pPyramid35 1
+    400078: pPyramid35 2
+    400080: pPyramid35 3
+    400082: pPyramid35 4
+    400084: pPyramid36
+    400086: pPyramid37
+    400088: pPyramid38
+    400090: pPyramid39
+    400092: pPyramid40
+    400094: pPyramid41
+    400096: pPyramid42
+    400098: pPyramid43
+    400100: pPyramid44
+    400102: pPyramid45
+    400104: pPyramid46
+    400106: pPyramid47
+    400108: pPyramid48
+    400110: pPyramid49
+    400112: pPyramid50
+    400114: pPyramid51
+    400116: pPyramid52
+    400118: transform18
+    400120: transform19
+    400122: transform20
+    400124: transform21
+    400126: //RootNode
+    2300000: pCube11
+    2300002: pCube12
+    2300004: pCube12 1
+    2300006: pCube12 2
+    2300008: pCube12 3
+    2300010: pCube12 4
+    2300012: pCube13
+    2300014: pCube14
+    2300016: pCube15
+    2300018: pCube16
+    2300020: pPyramid32
+    2300022: pPyramid32 1
+    2300024: pPyramid32 2
+    2300026: pPyramid32 3
+    2300028: pPyramid32 4
+    2300030: pPyramid33
+    2300032: pPyramid33 1
+    2300034: pPyramid33 2
+    2300036: pPyramid33 3
+    2300038: pPyramid33 4
+    2300040: pPyramid34
+    2300042: pPyramid34 1
+    2300044: pPyramid34 2
+    2300046: pPyramid34 3
+    2300048: pPyramid34 4
+    2300050: pPyramid35
+    2300052: pPyramid35 1
+    2300054: pPyramid35 2
+    2300056: pPyramid35 3
+    2300058: pPyramid35 4
+    2300060: pPyramid36
+    2300062: pPyramid37
+    2300064: pPyramid38
+    2300066: pPyramid39
+    2300068: pPyramid40
+    2300070: pPyramid41
+    2300072: pPyramid42
+    2300074: pPyramid43
+    2300076: pPyramid44
+    2300078: pPyramid45
+    2300080: pPyramid46
+    2300082: pPyramid47
+    2300084: pPyramid48
+    2300086: pPyramid49
+    2300088: pPyramid50
+    2300090: pPyramid51
+    2300092: pPyramid52
+    3300000: pCube11
+    3300002: pCube12
+    3300004: pCube12 1
+    3300006: pCube12 2
+    3300008: pCube12 3
+    3300010: pCube12 4
+    3300012: pCube13
+    3300014: pCube14
+    3300016: pCube15
+    3300018: pCube16
+    3300020: pPyramid32
+    3300022: pPyramid32 1
+    3300024: pPyramid32 2
+    3300026: pPyramid32 3
+    3300028: pPyramid32 4
+    3300030: pPyramid33
+    3300032: pPyramid33 1
+    3300034: pPyramid33 2
+    3300036: pPyramid33 3
+    3300038: pPyramid33 4
+    3300040: pPyramid34
+    3300042: pPyramid34 1
+    3300044: pPyramid34 2
+    3300046: pPyramid34 3
+    3300048: pPyramid34 4
+    3300050: pPyramid35
+    3300052: pPyramid35 1
+    3300054: pPyramid35 2
+    3300056: pPyramid35 3
+    3300058: pPyramid35 4
+    3300060: pPyramid36
+    3300062: pPyramid37
+    3300064: pPyramid38
+    3300066: pPyramid39
+    3300068: pPyramid40
+    3300070: pPyramid41
+    3300072: pPyramid42
+    3300074: pPyramid43
+    3300076: pPyramid44
+    3300078: pPyramid45
+    3300080: pPyramid46
+    3300082: pPyramid47
+    3300084: pPyramid48
+    3300086: pPyramid49
+    3300088: pPyramid50
+    3300090: pPyramid51
+    3300092: pPyramid52
+    4300000: pPyramid52
+    4300002: pCube11
+    4300004: pCube12
+    4300006: pPyramid35
+    4300008: pPyramid32
+    4300010: pPyramid33
+    4300012: pPyramid34
+    4300014: pCube12
+    4300016: pPyramid35
+    4300018: pPyramid32
+    4300020: pPyramid33
+    4300022: pPyramid34
+    4300024: pCube12
+    4300026: pPyramid35
+    4300028: pPyramid32
+    4300030: pPyramid33
+    4300032: pPyramid34
+    4300034: pPyramid44
+    4300036: pPyramid45
+    4300038: pPyramid46
+    4300040: pPyramid47
+    4300042: pCube15
+    4300044: pCube12
+    4300046: pPyramid35
+    4300048: pPyramid32
+    4300050: pPyramid33
+    4300052: pPyramid34
+    4300054: pPyramid36
+    4300056: pPyramid37
+    4300058: pCube13
+    4300060: pPyramid38
+    4300062: pPyramid39
+    4300064: pPyramid40
+    4300066: pPyramid41
+    4300068: pCube14
+    4300070: pPyramid42
+    4300072: pPyramid43
+    4300074: pPyramid48
+    4300076: pPyramid49
+    4300078: pPyramid50
+    4300080: pPyramid51
+    4300082: pCube16
+    4300084: pCube12
+    4300086: pPyramid35
+    4300088: pPyramid32
+    4300090: pPyramid33
+    4300092: pPyramid34
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,324 @@
+fileFormatVersion: 2
+guid: ad3a808300da8ef46a7909ae2fee917e
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Blades
+    100002: Blades 1
+    100004: Cirlce
+    100006: In
+    100008: Out
+    100010: pPyramid63
+    100012: pPyramid63 1
+    100014: pPyramid64
+    100016: pPyramid64 1
+    100018: pPyramid65
+    100020: pPyramid65 1
+    100022: pPyramid66
+    100024: pPyramid66 1
+    100026: pPyramid67
+    100028: pPyramid67 1
+    100030: pPyramid68
+    100032: pPyramid68 1
+    100034: pPyramid69
+    100036: pPyramid69 1
+    100038: pPyramid70
+    100040: pPyramid70 1
+    100042: pPyramid71
+    100044: pPyramid71 1
+    100046: pPyramid72
+    100048: pPyramid72 1
+    100050: pPyramid73
+    100052: pPyramid73 1
+    100054: pPyramid74
+    100056: pPyramid74 1
+    100058: pPyramid75
+    100060: pPyramid75 1
+    100062: pPyramid76
+    100064: pPyramid76 1
+    100066: pPyramid77
+    100068: pPyramid77 1
+    100070: pPyramid78
+    100072: pPyramid78 1
+    100074: pPyramid79
+    100076: pPyramid79 1
+    100078: pPyramid80
+    100080: pPyramid80 1
+    100082: pPyramid81
+    100084: pPyramid81 1
+    100086: pPyramid82
+    100088: pPyramid82 1
+    100090: //RootNode
+    400000: Blades
+    400002: Blades 1
+    400004: Cirlce
+    400006: In
+    400008: Out
+    400010: pPyramid63
+    400012: pPyramid63 1
+    400014: pPyramid64
+    400016: pPyramid64 1
+    400018: pPyramid65
+    400020: pPyramid65 1
+    400022: pPyramid66
+    400024: pPyramid66 1
+    400026: pPyramid67
+    400028: pPyramid67 1
+    400030: pPyramid68
+    400032: pPyramid68 1
+    400034: pPyramid69
+    400036: pPyramid69 1
+    400038: pPyramid70
+    400040: pPyramid70 1
+    400042: pPyramid71
+    400044: pPyramid71 1
+    400046: pPyramid72
+    400048: pPyramid72 1
+    400050: pPyramid73
+    400052: pPyramid73 1
+    400054: pPyramid74
+    400056: pPyramid74 1
+    400058: pPyramid75
+    400060: pPyramid75 1
+    400062: pPyramid76
+    400064: pPyramid76 1
+    400066: pPyramid77
+    400068: pPyramid77 1
+    400070: pPyramid78
+    400072: pPyramid78 1
+    400074: pPyramid79
+    400076: pPyramid79 1
+    400078: pPyramid80
+    400080: pPyramid80 1
+    400082: pPyramid81
+    400084: pPyramid81 1
+    400086: pPyramid82
+    400088: pPyramid82 1
+    400090: //RootNode
+    2300000: Cirlce
+    2300002: In
+    2300004: Out
+    2300006: pPyramid63
+    2300008: pPyramid63 1
+    2300010: pPyramid64
+    2300012: pPyramid64 1
+    2300014: pPyramid65
+    2300016: pPyramid65 1
+    2300018: pPyramid66
+    2300020: pPyramid66 1
+    2300022: pPyramid67
+    2300024: pPyramid67 1
+    2300026: pPyramid68
+    2300028: pPyramid68 1
+    2300030: pPyramid69
+    2300032: pPyramid69 1
+    2300034: pPyramid70
+    2300036: pPyramid70 1
+    2300038: pPyramid71
+    2300040: pPyramid71 1
+    2300042: pPyramid72
+    2300044: pPyramid72 1
+    2300046: pPyramid73
+    2300048: pPyramid73 1
+    2300050: pPyramid74
+    2300052: pPyramid74 1
+    2300054: pPyramid75
+    2300056: pPyramid75 1
+    2300058: pPyramid76
+    2300060: pPyramid76 1
+    2300062: pPyramid77
+    2300064: pPyramid77 1
+    2300066: pPyramid78
+    2300068: pPyramid78 1
+    2300070: pPyramid79
+    2300072: pPyramid79 1
+    2300074: pPyramid80
+    2300076: pPyramid80 1
+    2300078: pPyramid81
+    2300080: pPyramid81 1
+    2300082: pPyramid82
+    2300084: pPyramid82 1
+    3300000: Cirlce
+    3300002: In
+    3300004: Out
+    3300006: pPyramid63
+    3300008: pPyramid63 1
+    3300010: pPyramid64
+    3300012: pPyramid64 1
+    3300014: pPyramid65
+    3300016: pPyramid65 1
+    3300018: pPyramid66
+    3300020: pPyramid66 1
+    3300022: pPyramid67
+    3300024: pPyramid67 1
+    3300026: pPyramid68
+    3300028: pPyramid68 1
+    3300030: pPyramid69
+    3300032: pPyramid69 1
+    3300034: pPyramid70
+    3300036: pPyramid70 1
+    3300038: pPyramid71
+    3300040: pPyramid71 1
+    3300042: pPyramid72
+    3300044: pPyramid72 1
+    3300046: pPyramid73
+    3300048: pPyramid73 1
+    3300050: pPyramid74
+    3300052: pPyramid74 1
+    3300054: pPyramid75
+    3300056: pPyramid75 1
+    3300058: pPyramid76
+    3300060: pPyramid76 1
+    3300062: pPyramid77
+    3300064: pPyramid77 1
+    3300066: pPyramid78
+    3300068: pPyramid78 1
+    3300070: pPyramid79
+    3300072: pPyramid79 1
+    3300074: pPyramid80
+    3300076: pPyramid80 1
+    3300078: pPyramid81
+    3300080: pPyramid81 1
+    3300082: pPyramid82
+    3300084: pPyramid82 1
+    4300000: Out
+    4300002: pPyramid65
+    4300004: pPyramid63
+    4300006: pPyramid66
+    4300008: pPyramid64
+    4300010: pPyramid67
+    4300012: pPyramid68
+    4300014: pPyramid69
+    4300016: pPyramid70
+    4300018: pPyramid71
+    4300020: pPyramid72
+    4300022: pPyramid73
+    4300024: pPyramid74
+    4300026: pPyramid75
+    4300028: pPyramid76
+    4300030: pPyramid77
+    4300032: pPyramid78
+    4300034: pPyramid79
+    4300036: pPyramid80
+    4300038: pPyramid81
+    4300040: pPyramid82
+    4300042: In
+    4300044: pPyramid65
+    4300046: pPyramid63
+    4300048: pPyramid66
+    4300050: pPyramid64
+    4300052: pPyramid67
+    4300054: pPyramid68
+    4300056: pPyramid69
+    4300058: pPyramid70
+    4300060: pPyramid71
+    4300062: pPyramid72
+    4300064: pPyramid73
+    4300066: pPyramid74
+    4300068: pPyramid75
+    4300070: pPyramid76
+    4300072: pPyramid77
+    4300074: pPyramid78
+    4300076: pPyramid79
+    4300078: pPyramid80
+    4300080: pPyramid81
+    4300082: pPyramid82
+    4300084: Cirlce
+    9500000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color_1
+    second: {fileID: 2100000, guid: 453ed677b179e2d49bafdc28714c6036, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color_2
+    second: {fileID: 2100000, guid: 1eabae3fbcba0834d81276da24aeacec, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
