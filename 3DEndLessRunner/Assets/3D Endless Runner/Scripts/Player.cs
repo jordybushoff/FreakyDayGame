@@ -27,7 +27,7 @@ public class Player : MonoBehaviour {
 
 
 		//  I have used -200 gravity in this game
-		Physics.gravity = new Vector3(0,-200f,0);
+		Physics.gravity = new Vector3(0, -200f,0);
 
 	}
 
