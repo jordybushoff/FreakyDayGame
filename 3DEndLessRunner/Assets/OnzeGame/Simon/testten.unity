@@ -252,6 +252,22 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 22490234, guid: 3a54309c01b77144ca829b6e4a6d5d0c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000030517578
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409182, guid: 3a54309c01b77144ca829b6e4a6d5d0c, type: 3}
+      propertyPath: m_Text
+      value: Maatwerk
+      objectReference: {fileID: 0}
+    - target: {fileID: 11471130, guid: 3a54309c01b77144ca829b6e4a6d5d0c, type: 3}
+      propertyPath: m_Text
+      value: is LIT
+      objectReference: {fileID: 0}
+    - target: {fileID: 11471130, guid: 3a54309c01b77144ca829b6e4a6d5d0c, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a54309c01b77144ca829b6e4a6d5d0c, type: 3}
 --- !u!1001 &1874918528
@@ -293,5 +309,33 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5461804, guid: 74c79dfe432211943a76db6ddd610cd4, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11460758, guid: 74c79dfe432211943a76db6ddd610cd4, type: 3}
+      propertyPath: JumpForce
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 11460758, guid: 74c79dfe432211943a76db6ddd610cd4, type: 3}
+      propertyPath: DieAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: c6c0fc12864996d4ab0b3325a0cd5fdf, type: 3}
+    - target: {fileID: 11460758, guid: 74c79dfe432211943a76db6ddd610cd4, type: 3}
+      propertyPath: JetPackAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: cb7b1558ab6ca0e4b9c232d3d428eca8, type: 3}
+    - target: {fileID: 11460758, guid: 74c79dfe432211943a76db6ddd610cd4, type: 3}
+      propertyPath: Speed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8278176, guid: 74c79dfe432211943a76db6ddd610cd4, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8278176, guid: 74c79dfe432211943a76db6ddd610cd4, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cb7b1558ab6ca0e4b9c232d3d428eca8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74c79dfe432211943a76db6ddd610cd4, type: 3}

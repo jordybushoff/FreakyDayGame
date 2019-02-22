@@ -74,7 +74,7 @@ public class Player : MonoBehaviour {
 		if (CurrentPlayerState == PlayerStates.Live) {
 			if (Coll.gameObject.tag == "Trap") 
 			{
-				LastPosition = new Vector3 (transform.position.x+400,0,0);
+				LastPosition = new Vector3 (transform.position.x+3,0,0);
 				GetCurrentPlayerState (PlayerStates.Die); 
 			}
 		}
