@@ -9,7 +9,7 @@ public enum GameState{
 	InGame,
 	EndGame,
 	PouseGame,
-	Continiue
+	Continiue	
 }
 public class GameManager : MonoBehaviour {
 	public GameState CurrentState = GameState.Start;
