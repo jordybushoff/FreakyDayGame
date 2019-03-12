@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine .SceneManagement;
 using UnityEngine .UI;
+using UnityEngine .AI;
 public enum GameState{
 	
 	Start,
