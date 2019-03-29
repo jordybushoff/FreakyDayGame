@@ -15,10 +15,12 @@ public class Player : MonoBehaviour {
 	GameManager _GameManager;
 	Animator _Animator;
 	Vector3 LastPosition;
+    GameObject player;
 	AudioSource _AudioSource;
 	public int JumpForce;
 	public int Speed;
-	public AudioClip JetPackAudio;
+    public float PilarDistancex;
+    public AudioClip JetPackAudio;
 	public AudioClip DieAudio;
 	public ParticleSystem SmokeParticle;
 
@@ -27,12 +29,12 @@ public class Player : MonoBehaviour {
 
 
 		//  I have used -200 gravity in this game
-		Physics.gravity = new Vector3(0, -200f,0);
+		Physics.gravity = new Vector3(0, -350f,0);
 
 	}
 
-	void Start () {
-		_Rigidbody = GetComponent <Rigidbody> ();
+	void Start () {     
+        _Rigidbody = GetComponent <Rigidbody> ();
 		_Animator  = GetComponent <Animator> ();
 		_AudioSource = GetComponent <AudioSource> ();
 		_GameManager = GameObject.FindGameObjectWithTag ("GameManager").GetComponent <GameManager> ();
@@ -48,11 +50,33 @@ public class Player : MonoBehaviour {
 			GetCurrentPlayerState (PlayerStates.Live);
 		}
 
-		if (CurrentPlayerState == PlayerStates.Live) {
+        if (CurrentPlayerState == PlayerStates.Live) {
 
-			_Rigidbody.velocity = new Vector2 (Speed,_Rigidbody.velocity.y); // Speed
+            player = GameObject.FindGameObjectWithTag("Player");
+            _Rigidbody.velocity = new Vector2 (Speed,_Rigidbody.velocity.y); // Speed
 
-			if (Input.GetMouseButton (0))  // if left mouse button pressed
+            RaycastHit Geraakt;
+            
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Geraakt))
+            {
+                PilarDistancex = Geraakt.distance;
+
+                if (PilarDistancex < 100f)
+                {
+                    _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, JumpForce);
+                }
+                else if (PilarDistancex < 50f)
+                {
+
+                }
+            }
+
+            if (player.transform.position.y < -30f && PilarDistancex > 150f || player.transform.position.y < -30f && PilarDistancex == 0)
+            {
+                _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, JumpForce);
+            }
+
+            if (Input.GetMouseButton (0))  // if left mouse button pressed
 			{
 
 				_Rigidbody.velocity = new Vector2 (_Rigidbody.velocity.x,JumpForce); // Jump
@@ -64,7 +88,6 @@ public class Player : MonoBehaviour {
 					SmokeParticle.Stop();
 				}
 				*/
-
 		}
 	}
 
