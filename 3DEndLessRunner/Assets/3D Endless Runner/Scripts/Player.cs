@@ -16,10 +16,13 @@ public class Player : MonoBehaviour {
 	Animator _Animator;
 	Vector3 LastPosition;
     GameObject player;
+    GameObject trapup;
+    GameObject trapdown;
 	AudioSource _AudioSource;
 	public int JumpForce;
 	public int Speed;
-    public float PilarDistancex;
+    public float PilarDistanceup;
+    public float PilarDistancedown;
     public AudioClip JetPackAudio;
 	public AudioClip DieAudio;
 	public ParticleSystem SmokeParticle;
@@ -28,7 +31,7 @@ public class Player : MonoBehaviour {
 	{
 
 
-		//  I have used -200 gravity in this game
+		//zwaartekracht
 		Physics.gravity = new Vector3(0, -350f,0);
 
 	}
@@ -38,7 +41,9 @@ public class Player : MonoBehaviour {
 		_Animator  = GetComponent <Animator> ();
 		_AudioSource = GetComponent <AudioSource> ();
 		_GameManager = GameObject.FindGameObjectWithTag ("GameManager").GetComponent <GameManager> ();
-	}
+        trapup = GameObject.FindGameObjectWithTag("TrapUp");
+        trapdown = GameObject.FindGameObjectWithTag("Trap");
+    }
 
 	void Update () {
 		if (_GameManager.CurrentState == GameState.InGame) 
@@ -55,32 +60,43 @@ public class Player : MonoBehaviour {
             player = GameObject.FindGameObjectWithTag("Player");
             _Rigidbody.velocity = new Vector2 (Speed,_Rigidbody.velocity.y); // Speed
 
-            RaycastHit Geraakt;
-            
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Geraakt))
+            RaycastHit Geraakt1;
+            //RaycastHit Geraakt2;
+
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Geraakt1))
             {
-                PilarDistancex = Geraakt.distance;
+                PilarDistanceup = Geraakt1.distance;
 
-                if (PilarDistancex < 100f)
+                if (PilarDistanceup < 100f)
                 {
-                    _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, JumpForce);
-                }
-                else if (PilarDistancex < 50f)
+                   _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, JumpForce);
+               }
+                else if (PilarDistanceup < 50f)
                 {
 
-                }
-            }
+               }
+             }
 
-            if (player.transform.position.y < -30f && PilarDistancex > 150f || player.transform.position.y < -30f && PilarDistancex == 0)
+           // if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Geraakt2, 1 << 10))
+           // {
+           //     PilarDistancedown = Geraakt2.distance;
+
+           //     if (PilarDistancedown < 100f)
+           //     {
+                    
+            //    }
+           // }
+
+            if (player.transform.position.y < -30f || player.transform.position.y < -30f && PilarDistanceup == 0 || player.transform.position.y < -30f && PilarDistancedown == 0)
             {
                 _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, JumpForce);
             }
 
-            if (Input.GetMouseButton (0))  // if left mouse button pressed
-			{
+            //if (Input.GetMouseButton (0))  // if left mouse button pressed
+			//{
 
-				_Rigidbody.velocity = new Vector2 (_Rigidbody.velocity.x,JumpForce); // Jump
-			}
+				//_Rigidbody.velocity = new Vector2 (_Rigidbody.velocity.x,JumpForce); // Jump
+			//}
 			/*
 				if (Input.GetMouseButtonDown (0)) {
 					SmokeParticle.Play ();
