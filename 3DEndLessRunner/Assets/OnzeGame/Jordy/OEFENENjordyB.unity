@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.001
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
+  m_AmbientSkyColor: {r: 0.07043485, g: 0.07043485, b: 0.07043485, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -140,8 +140,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214795297}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.7907, y: -152, z: 980.67}
-  m_LocalScale: {x: 2407.2205, y: 932.60706, z: 1.8910863}
+  m_LocalPosition: {x: -8.7907, y: 17, z: 980.67}
+  m_LocalScale: {x: 3092.7969, y: 1198.2136, z: 2.4296677}
   m_Children: []
   m_Father: {fileID: 443957731}
   m_RootOrder: 4
@@ -259,7 +259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11430612, guid: 9ff578c48a4bd9b4ba34783374a2aebc, type: 3}
       propertyPath: Traps.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11430612, guid: 9ff578c48a4bd9b4ba34783374a2aebc, type: 3}
       propertyPath: Traps.Array.data[0]
@@ -269,15 +269,28 @@ PrefabInstance:
     - target: {fileID: 11430612, guid: 9ff578c48a4bd9b4ba34783374a2aebc, type: 3}
       propertyPath: Traps.Array.data[1]
       value: 
-      objectReference: {fileID: 150236, guid: 0c68f6c6ee4cee5478be4de2904e6b5b, type: 3}
+      objectReference: {fileID: 6508821028819562503, guid: 7bb5803e14909e14c83eef81bb9818d5,
+        type: 3}
     - target: {fileID: 11430612, guid: 9ff578c48a4bd9b4ba34783374a2aebc, type: 3}
       propertyPath: Traps.Array.data[2]
       value: 
-      objectReference: {fileID: 153338, guid: ac5e46c84a1a7324cb8ff23c1331f136, type: 3}
+      objectReference: {fileID: 1934364419329299156, guid: ae14021c32d7f3f42a3dbf6e50232eb3,
+        type: 3}
     - target: {fileID: 11430612, guid: 9ff578c48a4bd9b4ba34783374a2aebc, type: 3}
       propertyPath: Traps.Array.data[3]
       value: 
-      objectReference: {fileID: 192988, guid: 6f14c1e928a504d478a129b6f587316f, type: 3}
+      objectReference: {fileID: 1513307821412428378, guid: ec60269d559ed154b9d265fdd517e55b,
+        type: 3}
+    - target: {fileID: 11430612, guid: 9ff578c48a4bd9b4ba34783374a2aebc, type: 3}
+      propertyPath: Traps.Array.data[4]
+      value: 
+      objectReference: {fileID: 1513307821412428378, guid: ec60269d559ed154b9d265fdd517e55b,
+        type: 3}
+    - target: {fileID: 11430612, guid: 9ff578c48a4bd9b4ba34783374a2aebc, type: 3}
+      propertyPath: Traps.Array.data[5]
+      value: 
+      objectReference: {fileID: 1513307821412428378, guid: ec60269d559ed154b9d265fdd517e55b,
+        type: 3}
     - target: {fileID: 2045014, guid: 9ff578c48a4bd9b4ba34783374a2aebc, type: 3}
       propertyPath: m_BackGroundColor.r
       value: 0
@@ -293,6 +306,10 @@ PrefabInstance:
     - target: {fileID: 10875918, guid: 9ff578c48a4bd9b4ba34783374a2aebc, type: 3}
       propertyPath: m_Intensity
       value: 0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 491062, guid: 9ff578c48a4bd9b4ba34783374a2aebc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 799
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ff578c48a4bd9b4ba34783374a2aebc, type: 3}
@@ -712,7 +729,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 3.12
-  m_Range: 283.31
+  m_Range: 581.53
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -1151,6 +1168,10 @@ PrefabInstance:
     - target: {fileID: 2342264, guid: 74c79dfe432211943a76db6ddd610cd4, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574076, guid: 74c79dfe432211943a76db6ddd610cd4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74c79dfe432211943a76db6ddd610cd4, type: 3}
