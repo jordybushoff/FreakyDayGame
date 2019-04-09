@@ -57,6 +57,9 @@ public class Player : MonoBehaviour {
     }
 
 
+		
+		
+	
 	void Update () {
 		if (_GameManager.CurrentState == GameState.InGame) { //Zodra dit geldig is, voer het volgende uit:
 			_AudioSource.clip = JetPackAudio; //Sound effect wanneer er gesprongen wordt
@@ -128,16 +131,14 @@ public class Player : MonoBehaviour {
 				} else if (Input.GetMouseButtonUp (0)) {
 					SmokeParticle.Stop ();
 				}
+				
+
 			}
 		}
 	}
-				
-
-		
-	
 
 
-	/*void OnCollisionEnter(Collision Coll) //Wanneer er een collision met een trap plaatsvindt:
+	void OnCollisionEnter(Collision Coll) //Wanneer er een collision met een trap plaatsvindt:
 	{
 		if (CurrentPlayerState == PlayerStates.Live) {
 			if (Coll.gameObject.tag == "Trap") //W
@@ -148,7 +149,6 @@ public class Player : MonoBehaviour {
 		}
 
 	}
-	*/
 
 	void OnTriggerEnter(Collider other) //wanneer de speler succesvol door een trap springt (???)
 	{
