@@ -15,24 +15,24 @@ public class Player : MonoBehaviour {
 	GameManager _GameManager;
 	Animator _Animator;
 	Vector3 LastPosition;
-<<<<<<< HEAD
+
     GameObject player;
     GameObject trapup;
 	GameObject trapdown;
-=======
->>>>>>> 84ab8c6435001e44cc0dcdfad8a67bf7c1ab1968
+
+
 	AudioSource _AudioSource;
 	public int JumpForce;
 	public int ZweefForce;
 	public int Speed;
-<<<<<<< HEAD
+
     public float PilarDistanceup;
     public float PilarDistancedown;
 	//public float PilarDistancedown;
     public AudioClip JetPackAudio;
-=======
-	public AudioClip JetPackAudio;
->>>>>>> 84ab8c6435001e44cc0dcdfad8a67bf7c1ab1968
+
+
+
 	public AudioClip DieAudio;
 	public ParticleSystem SmokeParticle;
 
@@ -45,7 +45,7 @@ public class Player : MonoBehaviour {
 
 	}
 
-<<<<<<< HEAD
+
 	void Start () {     
         _Rigidbody = GetComponent <Rigidbody> ();
 		_Animator  = GetComponent <Animator> ();
@@ -56,103 +56,88 @@ public class Player : MonoBehaviour {
 		//trapdown = GameObject.FindGameObjectWithTag("Score");
     }
 
-	void Update () {
-
-
-		if (_GameManager.CurrentState == GameState.InGame) 
-=======
-	void Start () {
-		_Rigidbody = GetComponent <Rigidbody> (); //rigidbody component die wordt toegevoegd aan een object zorgt ervoor dat de positie van het object bepaald wordt door een physics simulatie.
-		_Animator  = GetComponent <Animator> (); // Animator is de interface voor Mecanim animation system
-		_AudioSource = GetComponent <AudioSource> (); //AudioSource voor geluidseffect
-		_GameManager = GameObject.FindGameObjectWithTag ("GameManager").GetComponent <GameManager> (); // Game Manager bepaalt in welke staat het spel is
-	}
 
 	void Update () {
-		if (_GameManager.CurrentState == GameState.InGame) //Zodra dit geldig is, voer het volgende uit:
->>>>>>> 84ab8c6435001e44cc0dcdfad8a67bf7c1ab1968
-		{
+		if (_GameManager.CurrentState == GameState.InGame) { //Zodra dit geldig is, voer het volgende uit:
 			_AudioSource.clip = JetPackAudio; //Sound effect wanneer er gesprongen wordt
-			if(_AudioSource.isPlaying == false)//Als het geluid niet afspeelt --->
-			_AudioSource.Play ();// ---> Speel het geluid af.
-			_Animator.SetBool ("InGame",true); //geeft een boolean value door aan een animatie controller
+			if (_AudioSource.isPlaying == false)//Als het geluid niet afspeelt --->
+				_AudioSource.Play ();// ---> Speel het geluid af.
+			_Animator.SetBool ("InGame", true); //geeft een boolean value door aan een animatie controller
 			GetCurrentPlayerState (PlayerStates.Live); // De game is in de live state.
 		}
 
-<<<<<<< HEAD
-        if (CurrentPlayerState == PlayerStates.Live) {
 
-            player = GameObject.FindGameObjectWithTag("Player");
-            _Rigidbody.velocity = new Vector2 (Speed,_Rigidbody.velocity.y); // Speed
+		if (CurrentPlayerState == PlayerStates.Live) {
 
-            RaycastHit Geraakt1;
+			player = GameObject.FindGameObjectWithTag ("Player");
+			_Rigidbody.velocity = new Vector2 (Speed, _Rigidbody.velocity.y); // Speed
+
+			RaycastHit Geraakt1;
 			//RaycastHit Geraakt2;
-            //RaycastHit Geraakt2;
+			//RaycastHit Geraakt2;
 
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Geraakt1))
-            {
+			if (Physics.Raycast (transform.position, transform.TransformDirection (Vector3.forward), out Geraakt1)) {
 				PilarDistanceup = Geraakt1.distance;
 				//PilarDistanceup = trapup.gameObject.transform.position.x;
 				//PilarDistancedown = Geraakt2.distance;
 				//PilarDistancedown = Geraakt2.distance;
 
-				if (PilarDistanceup < 60f)
-                {
-                   _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, JumpForce);
-               }
+				if (PilarDistanceup < 60f) {
+					_Rigidbody.velocity = new Vector2 (_Rigidbody.velocity.x, JumpForce);
+				}
 				//else if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Geraakt2))
                // {
 
               // }
 
-				else if (PilarDistanceup > 30f)
-				{
+				else if (PilarDistanceup > 30f) {
 					//_Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, ZweefForce);
 				}
 
 
-             }
-
-
-
-           // if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Geraakt2, 1 << 10))
-           // {
-           //     PilarDistancedown = Geraakt2.distance;
-
-           //     if (PilarDistancedown < 100f)
-           //     {
-                    
-            //    }
-           // }
-
-            if (player.transform.position.y < -80f || player.transform.position.y < -80f && PilarDistancedown == 0 || player.transform.position.y < -80f && PilarDistancedown == 0)
-            {
-                _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, JumpForce);
-            }
-=======
-		if (CurrentPlayerState == PlayerStates.Live) { //wanneer de huidige player state live is, voer het volgende uit:
-
-			_Rigidbody.velocity = new Vector2 (Speed,_Rigidbody.velocity.y); //Snelheid van de physics (verticale jump physics?)
-
-			if (Input.GetMouseButton (0))  // Wanneer de linkermuis wordt geklikt --->
-			{
->>>>>>> 84ab8c6435001e44cc0dcdfad8a67bf7c1ab1968
-
-				_Rigidbody.velocity = new Vector2 (_Rigidbody.velocity.x,JumpForce); // ----> Spring
 			}
+
+
+
+			// if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Geraakt2, 1 << 10))
+			// {
+			//     PilarDistancedown = Geraakt2.distance;
+
+			//     if (PilarDistancedown < 100f)
+			//     {
+                    
+			//    }
+			// }
+
+			if (player.transform.position.y < -80f || player.transform.position.y < -80f && PilarDistancedown == 0 || player.transform.position.y < -80f && PilarDistancedown == 0) {
+				_Rigidbody.velocity = new Vector2 (_Rigidbody.velocity.x, JumpForce);
+			}
+
+			if (CurrentPlayerState == PlayerStates.Live) { //wanneer de huidige player state live is, voer het volgende uit:
+
+				_Rigidbody.velocity = new Vector2 (Speed, _Rigidbody.velocity.y); //Snelheid van de physics (verticale jump physics?)
+
+				if (Input.GetMouseButton (0)) {  // Wanneer de linkermuis wordt geklikt --->
+
+
+					_Rigidbody.velocity = new Vector2 (_Rigidbody.velocity.x, JumpForce); // ----> Spring
+				}
 
 				if (Input.GetMouseButtonDown (0)) {
 					SmokeParticle.Play ();
-				}else if (Input.GetMouseButtonUp (0)){
-					SmokeParticle.Stop();
+				} else if (Input.GetMouseButtonUp (0)) {
+					SmokeParticle.Stop ();
 				}
-				
-
+			}
 		}
 	}
+				
+
+		
+	
 
 
-	void OnCollisionEnter(Collision Coll) //Wanneer er een collision met een trap plaatsvindt:
+	/*void OnCollisionEnter(Collision Coll) //Wanneer er een collision met een trap plaatsvindt:
 	{
 		if (CurrentPlayerState == PlayerStates.Live) {
 			if (Coll.gameObject.tag == "Trap") //W
@@ -163,6 +148,7 @@ public class Player : MonoBehaviour {
 		}
 
 	}
+	*/
 
 	void OnTriggerEnter(Collider other) //wanneer de speler succesvol door een trap springt (???)
 	{
