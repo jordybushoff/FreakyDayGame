@@ -9,6 +9,7 @@ TagManager:
   - Score
   - GameManager
   - Destroyer
+  - TrapUp
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - trapup
+  - trapdown
   - 
   - 
   - 
