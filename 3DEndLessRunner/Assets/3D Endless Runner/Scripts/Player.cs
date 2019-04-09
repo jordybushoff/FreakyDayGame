@@ -15,17 +15,24 @@ public class Player : MonoBehaviour {
 	GameManager _GameManager;
 	Animator _Animator;
 	Vector3 LastPosition;
+<<<<<<< HEAD
     GameObject player;
     GameObject trapup;
 	GameObject trapdown;
+=======
+>>>>>>> 84ab8c6435001e44cc0dcdfad8a67bf7c1ab1968
 	AudioSource _AudioSource;
 	public int JumpForce;
 	public int ZweefForce;
 	public int Speed;
+<<<<<<< HEAD
     public float PilarDistanceup;
     public float PilarDistancedown;
 	//public float PilarDistancedown;
     public AudioClip JetPackAudio;
+=======
+	public AudioClip JetPackAudio;
+>>>>>>> 84ab8c6435001e44cc0dcdfad8a67bf7c1ab1968
 	public AudioClip DieAudio;
 	public ParticleSystem SmokeParticle;
 
@@ -33,11 +40,12 @@ public class Player : MonoBehaviour {
 	{
 
 
-		//zwaartekracht
-		Physics.gravity = new Vector3(0, -350f,0);
+		//  I have used -200 gravity in this game
+		Physics.gravity = new Vector3(0, -200f,0);  //-200f bepaald valsnelheid wanneer er niet wordt geklikt. Lijkt geen effect te hebben op afstanden en snelheid.
 
 	}
 
+<<<<<<< HEAD
 	void Start () {     
         _Rigidbody = GetComponent <Rigidbody> ();
 		_Animator  = GetComponent <Animator> ();
@@ -52,14 +60,26 @@ public class Player : MonoBehaviour {
 
 
 		if (_GameManager.CurrentState == GameState.InGame) 
+=======
+	void Start () {
+		_Rigidbody = GetComponent <Rigidbody> (); //rigidbody component die wordt toegevoegd aan een object zorgt ervoor dat de positie van het object bepaald wordt door een physics simulatie.
+		_Animator  = GetComponent <Animator> (); // Animator is de interface voor Mecanim animation system
+		_AudioSource = GetComponent <AudioSource> (); //AudioSource voor geluidseffect
+		_GameManager = GameObject.FindGameObjectWithTag ("GameManager").GetComponent <GameManager> (); // Game Manager bepaalt in welke staat het spel is
+	}
+
+	void Update () {
+		if (_GameManager.CurrentState == GameState.InGame) //Zodra dit geldig is, voer het volgende uit:
+>>>>>>> 84ab8c6435001e44cc0dcdfad8a67bf7c1ab1968
 		{
-			_AudioSource.clip = JetPackAudio;
-			if(_AudioSource.isPlaying == false)
-			_AudioSource.Play ();
-			_Animator.SetBool ("InGame",true);
-			GetCurrentPlayerState (PlayerStates.Live);
+			_AudioSource.clip = JetPackAudio; //Sound effect wanneer er gesprongen wordt
+			if(_AudioSource.isPlaying == false)//Als het geluid niet afspeelt --->
+			_AudioSource.Play ();// ---> Speel het geluid af.
+			_Animator.SetBool ("InGame",true); //geeft een boolean value door aan een animatie controller
+			GetCurrentPlayerState (PlayerStates.Live); // De game is in de live state.
 		}
 
+<<<<<<< HEAD
         if (CurrentPlayerState == PlayerStates.Live) {
 
             player = GameObject.FindGameObjectWithTag("Player");
@@ -109,41 +129,47 @@ public class Player : MonoBehaviour {
             {
                 _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, JumpForce);
             }
+=======
+		if (CurrentPlayerState == PlayerStates.Live) { //wanneer de huidige player state live is, voer het volgende uit:
 
-            //if (Input.GetMouseButton (0))  // if left mouse button pressed
-			//{
+			_Rigidbody.velocity = new Vector2 (Speed,_Rigidbody.velocity.y); //Snelheid van de physics (verticale jump physics?)
 
-				//_Rigidbody.velocity = new Vector2 (_Rigidbody.velocity.x,JumpForce); // Jump
-			//}
-			/*
+			if (Input.GetMouseButton (0))  // Wanneer de linkermuis wordt geklikt --->
+			{
+>>>>>>> 84ab8c6435001e44cc0dcdfad8a67bf7c1ab1968
+
+				_Rigidbody.velocity = new Vector2 (_Rigidbody.velocity.x,JumpForce); // ----> Spring
+			}
+
 				if (Input.GetMouseButtonDown (0)) {
 					SmokeParticle.Play ();
 				}else if (Input.GetMouseButtonUp (0)){
 					SmokeParticle.Stop();
 				}
-				*/
+				
+
 		}
 	}
 
 
-	void OnCollisionEnter(Collision Coll)
+	void OnCollisionEnter(Collision Coll) //Wanneer er een collision met een trap plaatsvindt:
 	{
 		if (CurrentPlayerState == PlayerStates.Live) {
-			if (Coll.gameObject.tag == "Trap") 
+			if (Coll.gameObject.tag == "Trap") //W
 			{
-				LastPosition = new Vector3 (transform.position.x+3,0,0);
-				GetCurrentPlayerState (PlayerStates.Die); 
+				LastPosition = new Vector3 (transform.position.x+3,0,0); // reset player naar de volgende positie
+				GetCurrentPlayerState (PlayerStates.Die); //Verander player state naar, die
 			}
 		}
 
 	}
 
-	void OnTriggerEnter(Collider other)
+	void OnTriggerEnter(Collider other) //wanneer de speler succesvol door een trap springt (???)
 	{
 		if (CurrentPlayerState == PlayerStates.Live) {
 			if (other.tag == "Score") 
 			{
-				_GameManager.GetScore (1);
+				_GameManager.GetScore (1); //Tel 1 puntje er bij
 			}
 		}
 
@@ -158,26 +184,26 @@ public class Player : MonoBehaviour {
 	void Refresh(){
 		switch (CurrentPlayerState)
 		{
-		case PlayerStates.Ready:
+		case PlayerStates.Ready: //Wanneer de state, ready is
 			{
-				transform.position = LastPosition;
-				transform.rotation = Quaternion.Euler (0,0,0);
-				_Rigidbody .velocity = new Vector3 (0,0,0);
-				_Rigidbody.useGravity = false;
-				_Rigidbody.freezeRotation = true;
+				transform.position = LastPosition; //(Default positie?)
+				transform.rotation = Quaternion.Euler (0,0,0); // returned een rotatie die Z graden roteerd om de Z As, X graden om de X as en y graden om de y as.
+				_Rigidbody .velocity = new Vector3 (0,0,0); // Velocity geven aan de de rigidbody
+				_Rigidbody.useGravity = false; // bepaalt of gravity de rigidbody affects, wanneer op false, gedraagt de rigidbody alsof hij in de ruimte zweeft
+				_Rigidbody.freezeRotation = true; // bepaalt of physics de rotatie van het object beinvloeden
 			}
 			break;
-		case PlayerStates.Live:
+		case PlayerStates.Live: // als state live is
 			{
-				_Rigidbody.useGravity = true;
+				_Rigidbody.useGravity = true; // zorgt ervoor dat gravity actief wordt en de rigidbody daarmee beinvloed.
 			}
 			break;
-		case PlayerStates.Die:
+		case PlayerStates.Die: // als state die is
 			{
-				_Rigidbody.freezeRotation = false;
-				_AudioSource.PlayOneShot (DieAudio);
-				_Rigidbody.velocity = new Vector3 (0,0,0);
-				_GameManager.GetCurrentState (GameState.EndGame);
+				_Rigidbody.freezeRotation = false; //physics beinvloeden de rotatie van het object niet meer
+				_AudioSource.PlayOneShot (DieAudio); //speel audio effect af wanneer de state die is.
+				_Rigidbody.velocity = new Vector3 (0,0,0); //Velocity geven aan de rigidbody (Andere waarden dan de standaardwaarden kunnen onverwachtse effecten geven)
+				_GameManager.GetCurrentState (GameState.EndGame); //Ga naar endgame state.
 			}
 			break;
 		} 
