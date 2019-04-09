@@ -17,12 +17,14 @@ public class Player : MonoBehaviour {
 	Vector3 LastPosition;
     GameObject player;
     GameObject trapup;
-    GameObject trapdown;
+	GameObject trapdown;
 	AudioSource _AudioSource;
 	public int JumpForce;
+	public int ZweefForce;
 	public int Speed;
     public float PilarDistanceup;
     public float PilarDistancedown;
+	//public float PilarDistancedown;
     public AudioClip JetPackAudio;
 	public AudioClip DieAudio;
 	public ParticleSystem SmokeParticle;
@@ -43,9 +45,12 @@ public class Player : MonoBehaviour {
 		_GameManager = GameObject.FindGameObjectWithTag ("GameManager").GetComponent <GameManager> ();
         trapup = GameObject.FindGameObjectWithTag("TrapUp");
         trapdown = GameObject.FindGameObjectWithTag("Trap");
+		//trapdown = GameObject.FindGameObjectWithTag("Score");
     }
 
 	void Update () {
+
+
 		if (_GameManager.CurrentState == GameState.InGame) 
 		{
 			_AudioSource.clip = JetPackAudio;
@@ -61,21 +66,34 @@ public class Player : MonoBehaviour {
             _Rigidbody.velocity = new Vector2 (Speed,_Rigidbody.velocity.y); // Speed
 
             RaycastHit Geraakt1;
+			//RaycastHit Geraakt2;
             //RaycastHit Geraakt2;
 
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Geraakt1))
             {
-                PilarDistanceup = Geraakt1.distance;
+				PilarDistanceup = Geraakt1.distance;
+				//PilarDistanceup = trapup.gameObject.transform.position.x;
+				//PilarDistancedown = Geraakt2.distance;
+				//PilarDistancedown = Geraakt2.distance;
 
-                if (PilarDistanceup < 100f)
+				if (PilarDistanceup < 60f)
                 {
                    _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, JumpForce);
                }
-                else if (PilarDistanceup < 50f)
-                {
+				//else if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Geraakt2))
+               // {
 
-               }
+              // }
+
+				else if (PilarDistanceup > 30f)
+				{
+					//_Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, ZweefForce);
+				}
+
+
              }
+
+
 
            // if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Geraakt2, 1 << 10))
            // {
@@ -87,7 +105,7 @@ public class Player : MonoBehaviour {
             //    }
            // }
 
-            if (player.transform.position.y < -30f || player.transform.position.y < -30f && PilarDistanceup == 0 || player.transform.position.y < -30f && PilarDistancedown == 0)
+            if (player.transform.position.y < -80f || player.transform.position.y < -80f && PilarDistancedown == 0 || player.transform.position.y < -80f && PilarDistancedown == 0)
             {
                 _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, JumpForce);
             }
