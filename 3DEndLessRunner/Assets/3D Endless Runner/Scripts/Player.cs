@@ -85,6 +85,24 @@ public class Player : MonoBehaviour {
 				//PilarDistancedown = Geraakt2.distance;
 				//PilarDistancedown = Geraakt2.distance;
 
+<<<<<<< HEAD
+           // RaycastHit Geraakt1;
+            //RaycastHit Geraakt2;
+
+            //if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Geraakt1))
+            //{
+            //    PilarDistanceup = Geraakt1.distance;
+
+            //    if (PilarDistanceup < 100f)
+            //    {
+            //       _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, JumpForce);
+            //   }
+            //    else if (PilarDistanceup < 50f)
+            //    {
+
+            //   }
+            // }
+=======
 				if (PilarDistanceup < 60f) {
 					_Rigidbody.velocity = new Vector2 (_Rigidbody.velocity.x, JumpForce);
 				}
@@ -99,6 +117,7 @@ public class Player : MonoBehaviour {
 
 
 			}
+>>>>>>> 6ce0815e9c9f20407e755b2451455e5f1e6c4cf9
 
 
 
@@ -109,6 +128,25 @@ public class Player : MonoBehaviour {
 			//     if (PilarDistancedown < 100f)
 			//     {
                     
+<<<<<<< HEAD
+            //    }
+           // }
+           
+            //if (player.transform.position.y < -30f || player.transform.position.y < -30f && PilarDistanceup == 0 || player.transform.position.y < -30f && PilarDistancedown == 0)
+            //{
+            //    _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, JumpForce);
+            //}
+            if(PilarDistanceup >= player.transform.position.y)
+            {
+                if(PilarDistancedown >= player.transform.position.y)
+                {
+                _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, JumpForce);
+                }
+            }
+           
+            //if (Input.GetMouseButton (0))  // if left mouse button pressed
+			//{
+=======
 			//    }
 			// }
 
@@ -125,6 +163,7 @@ public class Player : MonoBehaviour {
 
 					_Rigidbody.velocity = new Vector2 (_Rigidbody.velocity.x, JumpForce); // ----> Spring
 				}
+>>>>>>> 6ce0815e9c9f20407e755b2451455e5f1e6c4cf9
 
 				if (Input.GetMouseButtonDown (0)) {
 					SmokeParticle.Play ();
