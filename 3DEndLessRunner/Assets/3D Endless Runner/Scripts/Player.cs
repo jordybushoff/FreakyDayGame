@@ -60,22 +60,22 @@ public class Player : MonoBehaviour {
             player = GameObject.FindGameObjectWithTag("Player");
             _Rigidbody.velocity = new Vector2 (Speed,_Rigidbody.velocity.y); // Speed
 
-            RaycastHit Geraakt1;
+           // RaycastHit Geraakt1;
             //RaycastHit Geraakt2;
 
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Geraakt1))
-            {
-                PilarDistanceup = Geraakt1.distance;
+            //if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Geraakt1))
+            //{
+            //    PilarDistanceup = Geraakt1.distance;
 
-                if (PilarDistanceup < 100f)
-                {
-                   _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, JumpForce);
-               }
-                else if (PilarDistanceup < 50f)
-                {
+            //    if (PilarDistanceup < 100f)
+            //    {
+            //       _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, JumpForce);
+            //   }
+            //    else if (PilarDistanceup < 50f)
+            //    {
 
-               }
-             }
+            //   }
+            // }
 
            // if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Geraakt2, 1 << 10))
            // {
@@ -86,12 +86,19 @@ public class Player : MonoBehaviour {
                     
             //    }
            // }
-
-            if (player.transform.position.y < -30f || player.transform.position.y < -30f && PilarDistanceup == 0 || player.transform.position.y < -30f && PilarDistancedown == 0)
+           
+            //if (player.transform.position.y < -30f || player.transform.position.y < -30f && PilarDistanceup == 0 || player.transform.position.y < -30f && PilarDistancedown == 0)
+            //{
+            //    _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, JumpForce);
+            //}
+            if(PilarDistanceup >= player.transform.position.y)
             {
+                if(PilarDistancedown >= player.transform.position.y)
+                {
                 _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, JumpForce);
+                }
             }
-
+           
             //if (Input.GetMouseButton (0))  // if left mouse button pressed
 			//{
 
