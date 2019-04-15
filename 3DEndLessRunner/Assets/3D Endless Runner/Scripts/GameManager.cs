@@ -104,6 +104,7 @@ public class GameManager : MonoBehaviour {
 
 	public void Btn_Restart(){
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+		//GetCurrentState (GameState.Ready);
 	}
 
 	public void Btn_Continiue(){
