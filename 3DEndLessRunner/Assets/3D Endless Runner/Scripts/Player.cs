@@ -160,7 +160,7 @@ public class Player : MonoBehaviour {
 		}
 
 	}
-
+	//
 	public void GetCurrentPlayerState (PlayerStates State)
 	{
 		CurrentPlayerState = State; //GetState
