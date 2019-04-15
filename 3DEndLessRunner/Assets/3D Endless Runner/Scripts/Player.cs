@@ -85,7 +85,7 @@ public class Player : MonoBehaviour {
 				//PilarDistancedown = Geraakt2.distance;
 				//PilarDistancedown = Geraakt2.distance;
 
-<<<<<<< HEAD
+
            // RaycastHit Geraakt1;
             //RaycastHit Geraakt2;
 
@@ -102,7 +102,7 @@ public class Player : MonoBehaviour {
 
             //   }
             // }
-=======
+
 				if (PilarDistanceup < 60f) {
 					_Rigidbody.velocity = new Vector2 (_Rigidbody.velocity.x, JumpForce);
 				}
@@ -117,7 +117,7 @@ public class Player : MonoBehaviour {
 
 
 			}
->>>>>>> 6ce0815e9c9f20407e755b2451455e5f1e6c4cf9
+
 
 
 
@@ -128,7 +128,7 @@ public class Player : MonoBehaviour {
 			//     if (PilarDistancedown < 100f)
 			//     {
                     
-<<<<<<< HEAD
+
             //    }
            // }
            
@@ -146,7 +146,7 @@ public class Player : MonoBehaviour {
            
             //if (Input.GetMouseButton (0))  // if left mouse button pressed
 			//{
-=======
+
 			//    }
 			// }
 
@@ -163,7 +163,7 @@ public class Player : MonoBehaviour {
 
 					_Rigidbody.velocity = new Vector2 (_Rigidbody.velocity.x, JumpForce); // ----> Spring
 				}
->>>>>>> 6ce0815e9c9f20407e755b2451455e5f1e6c4cf9
+
 
 				if (Input.GetMouseButtonDown (0)) {
 					SmokeParticle.Play ();
