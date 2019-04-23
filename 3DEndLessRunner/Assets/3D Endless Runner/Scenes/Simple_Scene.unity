@@ -171,6 +171,14 @@ PrefabInstance:
       propertyPath: Traps.Array.data[3]
       value: 
       objectReference: {fileID: 192988, guid: 6f14c1e928a504d478a129b6f587316f, type: 3}
+    - target: {fileID: 11430612, guid: 9ff578c48a4bd9b4ba34783374a2aebc, type: 3}
+      propertyPath: MinTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430612, guid: 9ff578c48a4bd9b4ba34783374a2aebc, type: 3}
+      propertyPath: MaxTime
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ff578c48a4bd9b4ba34783374a2aebc, type: 3}
 --- !u!1001 &1441522991
@@ -251,6 +259,18 @@ PrefabInstance:
     - target: {fileID: 22449766, guid: 3a54309c01b77144ca829b6e4a6d5d0c, type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22490234, guid: 3a54309c01b77144ca829b6e4a6d5d0c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170408, guid: 3a54309c01b77144ca829b6e4a6d5d0c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 141902, guid: 3a54309c01b77144ca829b6e4a6d5d0c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a54309c01b77144ca829b6e4a6d5d0c, type: 3}
