@@ -1,62 +1,70 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 
-
-public enum PlayerStates{
-	Start,
-	Ready,
-	Live,
-	Die
+public enum PlayerStates
+{
+    Start,
+    Ready,
+    Live,
+    Die
 }
-public class Player : MonoBehaviour {
-	public PlayerStates CurrentPlayerState = PlayerStates.Start;
-	Rigidbody _Rigidbody;
-	GameManager _GameManager;
-	Animator _Animator;
-	Vector3 LastPosition;
+public class Player : MonoBehaviour
+{
+    public PlayerStates CurrentPlayerState = PlayerStates.Start;
+    Rigidbody _Rigidbody;
+    GameManager _GameManager;
+    Animator _Animator;
+    Vector3 LastPosition;
     GameObject player;
-	AudioSource _AudioSource;
-	public int JumpForce;
-	public int Speed;
+    AudioSource _AudioSource;
+    public int JumpForce;
+    public int Speed;
     public float PilarDistancex;
     public AudioClip JetPackAudio;
-	public AudioClip DieAudio;
-	public ParticleSystem SmokeParticle;
-
-	void Awake()
-	{
+    public AudioClip DieAudio;
+    public ParticleSystem SmokeParticle;
+    public bool isDead = false;
 
 
-		//  I have used -200 gravity in this game
-		Physics.gravity = new Vector3(0, -350f,0);
+    void Awake()
+    {
 
-	}
 
-	void Start () {     
-        _Rigidbody = GetComponent <Rigidbody> ();
-		_Animator  = GetComponent <Animator> ();
-		_AudioSource = GetComponent <AudioSource> ();
-		_GameManager = GameObject.FindGameObjectWithTag ("GameManager").GetComponent <GameManager> ();
-	}
+        //  I have used -200 gravity in this game
+        Physics.gravity = new Vector3(0, -350f, 0);
 
-	void Update () {
-		if (_GameManager.CurrentState == GameState.InGame) 
-		{
-			_AudioSource.clip = JetPackAudio;
-			if(_AudioSource.isPlaying == false)
-			_AudioSource.Play ();
-			_Animator.SetBool ("InGame",true);
-			GetCurrentPlayerState (PlayerStates.Live);
-		}
+    }
 
-        if (CurrentPlayerState == PlayerStates.Live) {
+    void Start()
+    {
+        _Rigidbody = GetComponent<Rigidbody>();
+        _Animator = GetComponent<Animator>();
+        _AudioSource = GetComponent<AudioSource>();
+        _GameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+    }
 
+
+
+    void Update()
+    {
+        if (_GameManager.CurrentState == GameState.InGame)
+        {
+            _AudioSource.clip = JetPackAudio;
+            if (_AudioSource.isPlaying == false)
+                _AudioSource.Play();
+            _Animator.SetBool("InGame", true);
+            GetCurrentPlayerState(PlayerStates.Live);
+        }
+
+        if (CurrentPlayerState == PlayerStates.Live)
+        {
+            var mlGoalObjects = GameObject.FindGameObjectsWithTag("MLGoalTag");
             player = GameObject.FindGameObjectWithTag("Player");
-            _Rigidbody.velocity = new Vector2 (Speed,_Rigidbody.velocity.y); // Speed
+            _Rigidbody.velocity = new Vector2(Speed, _Rigidbody.velocity.y); // Speed
 
             RaycastHit Geraakt;
-            
+
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Geraakt))
             {
                 PilarDistancex = Geraakt.distance;
@@ -71,81 +79,97 @@ public class Player : MonoBehaviour {
                 }
             }
 
-            if (player.transform.position.y < -30f && PilarDistancex > 150f || player.transform.position.y < -30f && PilarDistancex == 0)
+
+
+            if (Input.GetMouseButton(0))  // if left mouse button pressed
             {
-                _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, JumpForce);
+
+                _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, JumpForce); // Jump
             }
-
-            if (Input.GetMouseButton (0))  // if left mouse button pressed
-			{
-
-				_Rigidbody.velocity = new Vector2 (_Rigidbody.velocity.x,JumpForce); // Jump
-			}
-			/*
+            /*
 				if (Input.GetMouseButtonDown (0)) {
 					SmokeParticle.Play ();
 				}else if (Input.GetMouseButtonUp (0)){
 					SmokeParticle.Stop();
 				}
 				*/
-		}
-	}
+        }
+        if (player.transform.position.y < -30f && PilarDistancex > 150f || player.transform.position.y < -30f && PilarDistancex == 0)
+        {
+            Flap();
+        }
+
+    }
+    public void Flap()
+    {
+        _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, JumpForce); // Jump
+    }
 
 
-	void OnCollisionEnter(Collision Coll)
-	{
-		if (CurrentPlayerState == PlayerStates.Live) {
-			if (Coll.gameObject.tag == "Trap") 
-			{
-				LastPosition = new Vector3 (transform.position.x+3,0,0);
-				GetCurrentPlayerState (PlayerStates.Die); 
-			}
-		}
+    void OnCollisionEnter(Collision Coll)
+    {
+        if (CurrentPlayerState == PlayerStates.Live)
+        {
+           
+            if (Coll.gameObject.tag == "Trap")
+            {
+                _GameManager.GetScore(0, 1);
+                LastPosition = new Vector3(transform.position.x + 3, 0, 0);
+                GetCurrentPlayerState(PlayerStates.Die);
+                isDead = true;
+               
+            }
+        }
 
-	}
+    }
 
-	void OnTriggerEnter(Collider other)
-	{
-		if (CurrentPlayerState == PlayerStates.Live) {
-			if (other.tag == "Score") 
-			{
-				_GameManager.GetScore (1);
-			}
-		}
+    void OnTriggerEnter(Collider other)
+    {
+        if (CurrentPlayerState == PlayerStates.Live)
+        {
+            if (other.tag == "MLGoalTag")
+            {
+               _GameManager.GetScore(1, 0);
+            }
+        }
 
-	}
+    }
 
-	public void GetCurrentPlayerState (PlayerStates State)
-	{
-		CurrentPlayerState = State; //GetState
-		Refresh ();
-	}
+    public void GetCurrentPlayerState(PlayerStates State)
+    {
+        CurrentPlayerState = State; //GetState
+        Refresh();
+    }
 
-	void Refresh(){
-		switch (CurrentPlayerState)
-		{
-		case PlayerStates.Ready:
-			{
-				transform.position = LastPosition;
-				transform.rotation = Quaternion.Euler (0,0,0);
-				_Rigidbody .velocity = new Vector3 (0,0,0);
-				_Rigidbody.useGravity = false;
-				_Rigidbody.freezeRotation = true;
-			}
-			break;
-		case PlayerStates.Live:
-			{
-				_Rigidbody.useGravity = true;
-			}
-			break;
-		case PlayerStates.Die:
-			{
-				_Rigidbody.freezeRotation = false;
-				_AudioSource.PlayOneShot (DieAudio);
-				_Rigidbody.velocity = new Vector3 (0,0,0);
-				_GameManager.GetCurrentState (GameState.EndGame);
-			}
-			break;
-		} 
-	}
+    void Refresh()
+    {
+        switch (CurrentPlayerState)
+        {
+            case PlayerStates.Ready:
+                {
+                    transform.position = LastPosition;
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                    _Rigidbody.velocity = new Vector3(0, 0, 0);
+                    _Rigidbody.useGravity = false;
+                    _Rigidbody.freezeRotation = true;
+                }
+                break;
+            case PlayerStates.Live:
+                {
+                    _Rigidbody.useGravity = true;
+                }
+                break;
+            case PlayerStates.Die:
+                {
+
+                    _Rigidbody.freezeRotation = false;
+                    _AudioSource.PlayOneShot(DieAudio);
+                    _Rigidbody.velocity = new Vector3(0, 0, 0);
+                    
+                    _GameManager.GetCurrentState(GameState.EndGame);
+                }
+                break;
+        }
+    }
+
 }
