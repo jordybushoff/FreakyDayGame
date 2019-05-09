@@ -6,6 +6,7 @@ public class Portal : MonoBehaviour
 {
 	public Transform spawnPoint;
 	public float speed = 5f;
+	public AudioClip TeleportSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class Portal : MonoBehaviour
 	void OnTriggerEnter(Collider other)
 	{
 		other.gameObject.transform.position = spawnPoint.position;
+		GetComponent<AudioSource>().PlayOneShot(TeleportSound);
 	}
 
     // Update is called once per frame
