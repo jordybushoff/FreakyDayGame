@@ -38,20 +38,24 @@ public class JordyMovement : MonoBehaviour {
 	void MoveRotation()
 	{
 		if (Input.GetKeyDown(KeyCode.DownArrow))
-		{          
+		{
+            SoundManagerScript.PlaySound("pacman_chomp");
 			playerRotation.rotation = Quaternion.Euler(0f, 180f, 0f);            
 		}
 		if (Input.GetKeyDown(KeyCode.UpArrow))
-		{  
-			playerRotation.rotation = Quaternion.Euler(0f, 0f, 0f);
+		{
+            SoundManagerScript.PlaySound("pacman_chomp");
+            playerRotation.rotation = Quaternion.Euler(0f, 0f, 0f);
 		}
 		if (Input.GetKeyDown(KeyCode.LeftArrow))
-		{      
-			playerRotation.rotation = Quaternion.Euler(0f, -90f, 0f);                      
+		{
+            SoundManagerScript.PlaySound("pacman_chomp");
+            playerRotation.rotation = Quaternion.Euler(0f, -90f, 0f);                      
 		}
 		if (Input.GetKeyDown(KeyCode.RightArrow))
 		{
-			playerRotation.rotation = Quaternion.Euler(0f, 90f, 0f);
+            SoundManagerScript.PlaySound("pacman_chomp");
+            playerRotation.rotation = Quaternion.Euler(0f, 90f, 0f);
 		}
 	}
 }
