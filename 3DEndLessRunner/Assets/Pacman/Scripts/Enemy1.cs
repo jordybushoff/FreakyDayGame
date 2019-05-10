@@ -25,9 +25,35 @@ public class Enemy1 : MonoBehaviour
 		agent.destination = target.transform.position;
     }
 
-	public void OnCollisionEnter(Collision collision)
-	{
-		if(collision.gameObject.tag == "Player")
-		SceneManager.LoadScene("OefenScenePacman");
-	}
+
+
+    public void OnCollisionEnter(Collision collision)
+    {
+       //  SoundManagerScript.PlaySound("pacman_death");       
+        
+        if (collision.gameObject.tag == "Player")
+        {
+            startTimer = true;
+        }
+
+        if (startTimer == true)
+        {
+            timeElapsed += Time.deltaTime;
+            if (timeElapsed > 1f)
+            {
+                SceneManager.LoadScene("OefenScenePacman");
+            }
+        }
+
+    }
+
+    
+
+
+	//public void OnCollisionEnter(Collision collision)
+	//{
+	//	if(collision.gameObject.tag == "Player")
+	//	SceneManager.LoadScene("OefenScenePacman");
+	//}
+
 }
