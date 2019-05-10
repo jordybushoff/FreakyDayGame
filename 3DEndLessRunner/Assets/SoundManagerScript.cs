@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class SoundManagerScript : MonoBehaviour
 {
-    public static AudioClip pacmanWalkSound, pacmanDeathSound;
+    public static AudioClip pacmanWalkSound;
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
     void Start()
     {
         pacmanWalkSound = Resources.Load<AudioClip>("pacman_chomp");
-        pacmanDeathSound = Resources.Load<AudioClip>("pacman_death");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -29,10 +28,6 @@ public class SoundManagerScript : MonoBehaviour
             case "pacman_chomp":
                 audioSrc.PlayOne(pacmanWalkSound);
                 break;
-            case "pacman_death":
-                audioSrc.PlayOneShot(pacmanDeathSound);
-                break;
-
         }
     }
  } 
