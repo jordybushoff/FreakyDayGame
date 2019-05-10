@@ -12,6 +12,10 @@ public class Enemy : MonoBehaviour
     public GameObject enemy2;
     public GameObject enemy3;
     public GameObject enemy4;
+    public GameObject spawn1;
+    public GameObject spawn2;
+    public GameObject spawn3;
+    public GameObject spawn4;
     NavMeshAgent agent;
     float Speed = 3f;
     float currenttime = 0f;
@@ -33,6 +37,10 @@ public class Enemy : MonoBehaviour
         enemy2 = GameObject.FindGameObjectWithTag("Enemy2");
         enemy3 = GameObject.FindGameObjectWithTag("Enemy3");
         enemy4 = GameObject.FindGameObjectWithTag("Enemy4");
+        spawn1 = GameObject.FindGameObjectWithTag("Spawn1");
+        spawn2 = GameObject.FindGameObjectWithTag("Spawn2");
+        spawn3 = GameObject.FindGameObjectWithTag("Spawn3");
+        spawn4 = GameObject.FindGameObjectWithTag("Spawn4");
     }
 
     // Update is called once per frame
@@ -56,14 +64,13 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("Pacman jens");
+            //SceneManager.LoadScene("Pacman jens");
             leven--;
-
-            /*enemy1.transform.position = new Vector3(4.545066f, 0.92f, 9.965279f);
-            enemy2.transform.position = new Vector3(-13.40629f, 0.92f, 10.05341f);
-            enemy3.transform.position = new Vector3(4.493049f, 0.92f, -7.914293f);
-            enemy4.transform.position = new Vector3(-13.3047f, 0.92f, -8.012804f);
-            target.transform.position = new Vector3(0.15f, 0.767f, 1.924f);*/
+            enemy1.transform.position = spawn1.transform.position;
+            enemy2.transform.position = spawn2.transform.position;
+            enemy3.transform.position = spawn3.transform.position;
+            enemy4.transform.position = spawn4.transform.position;
+            target.transform.position = new Vector3(0.15f, 0.767f, 1.924f);
         }         
     }
 }

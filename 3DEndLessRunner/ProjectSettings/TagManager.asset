@@ -15,6 +15,10 @@ TagManager:
   - Enemy2
   - Enemy3
   - Enemy4
+  - Spawn1
+  - Spawn2
+  - Spawn3
+  - Spawn4
   layers:
   - Default
   - TransparentFX
