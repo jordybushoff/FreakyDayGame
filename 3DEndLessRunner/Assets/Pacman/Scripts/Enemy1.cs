@@ -6,36 +6,36 @@ using UnityEngine.SceneManagement;
 
 public class Enemy1 : MonoBehaviour
 {
-
-    public GameObject target;
-    NavMeshAgent agent;
-    public int Speed;
-    bool startTimer = false;
-    public float timeElapsed;
+	public GameObject target;
+	NavMeshAgent agent;
+	public int Speed;
 
     // Start is called before the first frame update
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        agent.speed = Speed;
-        if (target == null)
-            target = GameObject.FindGameObjectWithTag("Player");
-
+		agent = GetComponent<NavMeshAgent>();
+		agent.speed = Speed;
+		if (target == null)
+			target = GameObject.FindGameObjectWithTag ("Player");     
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        agent.destination = target.transform.position;
+		agent.destination = target.transform.position;
     }
+
 
 
     public void OnCollisionEnter(Collision collision)
     {
+
          //SoundManagerScript.PlaySound("pacman_death");       
+
+       //  SoundManagerScript.PlaySound("pacman_death");       
+
         
-        if (collision.gameObject.tag == "Player")
+       /* if (collision.gameObject.tag == "Player")
         {
             startTimer = true;
         }
@@ -48,9 +48,16 @@ public class Enemy1 : MonoBehaviour
                 SceneManager.LoadScene("OefenScenePacman");
             }
         }
-
+*/
     }
 
     
+
+
+	//public void OnCollisionEnter(Collision collision)
+	//{
+	//	if(collision.gameObject.tag == "Player")
+	//	SceneManager.LoadScene("OefenScenePacman");
+	//}
 
 }
