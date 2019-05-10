@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PacManmove : MonoBehaviour
 {
-    public float moveSpeed = 7f;
+    public float moveSpeed;
 
     private Rigidbody playerRb;
     private Transform playerRotation;
@@ -41,7 +41,21 @@ public class PacManmove : MonoBehaviour
 
     void Update()
     {
-        currenttime -= 1 * Time.deltaTime;
+        if (timer == true)
+        {
+            currenttime -= 1 * Time.deltaTime;
+            ScoreText.text = currenttime.ToString("0");
+            if (currenttime <= 0)
+            {
+                timer = false;
+            }
+        }
+
+        if (timer == false)
+        {
+            SetScoreText();
+            moveSpeed = 4f;
+        }
 
         MoveRotation();
         if (leven <= 0)
