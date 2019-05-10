@@ -8,6 +8,7 @@ public class JordyMovement : MonoBehaviour {
 	
 	private Rigidbody playerRb;
 	private Transform playerRotation;
+	public AudioSource MovementPackman;
 	
 	
 	// Use this for initialization
@@ -39,22 +40,24 @@ public class JordyMovement : MonoBehaviour {
 	{
 		if (Input.GetKeyDown(KeyCode.DownArrow))
 		{
-            SoundManagerScript.PlaySound("pacman_chomp");
+			MovementPackman.Play();
 			playerRotation.rotation = Quaternion.Euler(0f, 180f, 0f);            
 		}
 		if (Input.GetKeyDown(KeyCode.UpArrow))
 		{
-            SoundManagerScript.PlaySound("pacman_chomp");
+
+			MovementPackman.Play();
             playerRotation.rotation = Quaternion.Euler(0f, 0f, 0f);
 		}
 		if (Input.GetKeyDown(KeyCode.LeftArrow))
 		{
-            SoundManagerScript.PlaySound("pacman_chomp");
+
+			MovementPackman.Play();
             playerRotation.rotation = Quaternion.Euler(0f, -90f, 0f);                      
 		}
 		if (Input.GetKeyDown(KeyCode.RightArrow))
 		{
-            SoundManagerScript.PlaySound("pacman_chomp");
+			MovementPackman.Play();
             playerRotation.rotation = Quaternion.Euler(0f, 90f, 0f);
 		}
 	}

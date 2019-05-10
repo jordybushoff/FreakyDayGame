@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,7 +27,7 @@ public class SoundManagerScript : MonoBehaviour
         switch (clip)
         {
             case "pacman_chomp":
-                audioSrc.PlayOneShot(pacmanWalkSound);
+                audioSrc.PlayOne(pacmanWalkSound);
                 break;
             case "pacman_death":
                 audioSrc.PlayOneShot(pacmanDeathSound);
@@ -36,3 +36,4 @@ public class SoundManagerScript : MonoBehaviour
         }
     }
  } 
+ */
