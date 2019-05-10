@@ -33,7 +33,7 @@ public class Enemy1 : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-         SoundManagerScript.PlaySound("pacman_death");       
+         //SoundManagerScript.PlaySound("pacman_death");       
         
         if (collision.gameObject.tag == "Player")
         {
