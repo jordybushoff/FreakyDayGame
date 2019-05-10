@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Enemy1 : MonoBehaviour
 {
-
 	public GameObject target;
 	NavMeshAgent agent;
 	public int Speed;
@@ -17,8 +16,7 @@ public class Enemy1 : MonoBehaviour
 		agent = GetComponent<NavMeshAgent>();
 		agent.speed = Speed;
 		if (target == null)
-			target = GameObject.FindGameObjectWithTag ("Player");
-        
+			target = GameObject.FindGameObjectWithTag ("Player");     
     }
 
     // Update is called once per frame
