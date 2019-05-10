@@ -31,7 +31,7 @@ public class Enemy1 : MonoBehaviour
     {
        //  SoundManagerScript.PlaySound("pacman_death");       
         
-        if (collision.gameObject.tag == "Player")
+       /* if (collision.gameObject.tag == "Player")
         {
             startTimer = true;
         }
@@ -44,7 +44,7 @@ public class Enemy1 : MonoBehaviour
                 SceneManager.LoadScene("OefenScenePacman");
             }
         }
-
+*/
     }
 
     
