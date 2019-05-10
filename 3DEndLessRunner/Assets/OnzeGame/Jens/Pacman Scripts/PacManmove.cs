@@ -22,6 +22,7 @@ public class PacManmove : MonoBehaviour
     public GameObject enemy3;
     public GameObject enemy4;
 
+
     // Use this for initialization
     void Awake()
     {
@@ -75,24 +76,24 @@ public class PacManmove : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            //MovementPackman.Play();
+            MovementPackman.Play();
             playerRotation.rotation = Quaternion.Euler(0f, 180f, 0f);
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
 
-            //MovementPackman.Play();
+            MovementPackman.Play();
             playerRotation.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
 
-            //MovementPackman.Play();
+            MovementPackman.Play();
             playerRotation.rotation = Quaternion.Euler(0f, -90f, 0f);
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            //MovementPackman.Play();
+            MovementPackman.Play();
             playerRotation.rotation = Quaternion.Euler(0f, 90f, 0f);
         }
     }
