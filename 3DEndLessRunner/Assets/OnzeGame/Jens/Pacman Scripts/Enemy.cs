@@ -71,6 +71,19 @@ public class Enemy : MonoBehaviour
             enemy3.transform.position = spawn3.transform.position;
             enemy4.transform.position = spawn4.transform.position;
             target.transform.position = spawnPacman.transform.position;                    
+			enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+			enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+			enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+			enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+            enemy1.transform.position = spawn1.transform.position;
+            enemy2.transform.position = spawn2.transform.position;
+            enemy3.transform.position = spawn3.transform.position;
+            enemy4.transform.position = spawn4.transform.position;
+            target.transform.position = new Vector3(0.15f, 0.767f, 1.924f);
+			enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+			enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+			enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+			enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
         }         
     }
 }
