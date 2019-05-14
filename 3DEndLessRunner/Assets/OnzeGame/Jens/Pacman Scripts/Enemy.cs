@@ -16,12 +16,12 @@ public class Enemy : MonoBehaviour
     public GameObject spawn2;
     public GameObject spawn3;
     public GameObject spawn4;
+    public GameObject spawnPacman;
     NavMeshAgent agent;
     float Speed = 3f;
     float currenttime = 0f;
-    float starttime = 3f;
-    static int leven = 3;  
-    
+    float starttime = 3f;    
+    static int leven = 3;    
    
     // Start is called before the first frame update
     void Start()
@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
         {
             agent.speed = Speed;
             agent.destination = target.transform.position;
-        }
+        }      
 
         if (leven <= 0)
         {
@@ -66,11 +66,11 @@ public class Enemy : MonoBehaviour
         {
             //SceneManager.LoadScene("Pacman jens");
             leven--;
-            enemy1.transform.position = spawn1.transform.position;
+            enemy1.transform.position = spawn1.transform.position;           
             enemy2.transform.position = spawn2.transform.position;
             enemy3.transform.position = spawn3.transform.position;
             enemy4.transform.position = spawn4.transform.position;
-            target.transform.position = new Vector3(0.15f, 0.767f, 1.924f);
+            target.transform.position = spawnPacman.transform.position;                    
         }         
     }
 }
