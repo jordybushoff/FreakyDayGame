@@ -66,8 +66,7 @@ public class Enemy : MonoBehaviour
         {
             //SceneManager.LoadScene("Pacman jens");
             leven--;
-        
-                            
+
 			enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 			enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 			enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
@@ -81,6 +80,7 @@ public class Enemy : MonoBehaviour
 			enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
 			enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
 			enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+        
         }         
     }
 }
