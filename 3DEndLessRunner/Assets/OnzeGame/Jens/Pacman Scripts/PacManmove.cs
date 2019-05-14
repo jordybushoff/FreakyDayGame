@@ -107,10 +107,7 @@ public class PacManmove : MonoBehaviour
         }
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Enemy3" || collision.gameObject.tag == "Enemy4" && leven >= 1)
         {
-			enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-			enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-			enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-			enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+
             leven--;
         }      
     }

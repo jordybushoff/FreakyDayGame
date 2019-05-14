@@ -66,11 +66,8 @@ public class Enemy : MonoBehaviour
         {
             //SceneManager.LoadScene("Pacman jens");
             leven--;
-            enemy1.transform.position = spawn1.transform.position;           
-            enemy2.transform.position = spawn2.transform.position;
-            enemy3.transform.position = spawn3.transform.position;
-            enemy4.transform.position = spawn4.transform.position;
-            target.transform.position = spawnPacman.transform.position;                    
+        
+                            
 			enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 			enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 			enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
