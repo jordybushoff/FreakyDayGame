@@ -16,21 +16,25 @@ public class Enemy : MonoBehaviour
     public GameObject spawn2;
     public GameObject spawn3;
     public GameObject spawn4;
+    public GameObject spawnPacman;
     NavMeshAgent agent;
     float Speed = 3f;
     float currenttime = 0f;
+
     float starttime = 3f;
- public static int leven = 3;  
-    
-   
+ public static int leven = 3;
+
+    float starttime = 3f;
+    static int leven = 3;
+
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         currenttime = starttime;
-        
+
         if (target == null)
-        { 
+        {
             target = GameObject.FindGameObjectWithTag("Player");
         }
         enemy1 = GameObject.FindGameObjectWithTag("Enemy");
@@ -46,7 +50,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currenttime -= 1 * Time.deltaTime;       
+        currenttime -= 1 * Time.deltaTime;
 
         if (currenttime <= 0)
         {
@@ -66,6 +70,7 @@ public class Enemy : MonoBehaviour
         {
             //SceneManager.LoadScene("Pacman jens");
             leven--;
+
 			enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 			enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 			enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
@@ -79,6 +84,7 @@ public class Enemy : MonoBehaviour
 			enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
 			enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
 			enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
-        }         
+
+        }
     }
 }
