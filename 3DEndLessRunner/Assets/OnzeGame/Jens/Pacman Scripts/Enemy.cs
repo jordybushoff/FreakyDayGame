@@ -24,8 +24,7 @@ public class Enemy : MonoBehaviour
     float starttime = 3f;
  public static int leven = 3;
 
-    float starttime = 3f;
-    static int leven = 3;
+  
 
     // Start is called before the first frame update
     void Start()
