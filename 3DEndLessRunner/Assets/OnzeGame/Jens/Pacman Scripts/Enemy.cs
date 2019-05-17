@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     float Speed = 3f;
     float currenttime = 0f;
     float starttime = 3f;
-    static int leven = 3;  
+ public static int leven = 3;  
     
    
     // Start is called before the first frame update

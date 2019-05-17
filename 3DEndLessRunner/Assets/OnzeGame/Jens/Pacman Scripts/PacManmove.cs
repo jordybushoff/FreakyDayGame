@@ -65,7 +65,9 @@ public class PacManmove : MonoBehaviour
             Destroy(food);
             ScoreText.text = "Defeat!";          
             moveSpeed = 0f;
+
         }
+      
     }
 
     public void ContinuousMovement()
