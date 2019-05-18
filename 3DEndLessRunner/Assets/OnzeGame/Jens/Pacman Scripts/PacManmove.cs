@@ -10,6 +10,7 @@ public class PacManmove : MonoBehaviour
     private Rigidbody playerRb;
     private Transform playerRotation;
     public AudioSource MovementPackman;
+	public AudioSource SnoepGeluid;
     public static int Score = 0;
     public static int leven = 3;
     float currenttime = 0f;
@@ -44,6 +45,7 @@ public class PacManmove : MonoBehaviour
     {
         if (timer == true)
         {
+			MovementPackman.Stop ();
             currenttime -= 1 * Time.deltaTime;
             ScoreText.text = currenttime.ToString("0");
             if (currenttime <= 0)
@@ -65,6 +67,7 @@ public class PacManmove : MonoBehaviour
             Destroy(food);
             ScoreText.text = "Defeat!";          
             moveSpeed = 0f;
+			MovementPackman.Stop ();
 
         }
       
@@ -93,19 +96,26 @@ public class PacManmove : MonoBehaviour
             MovementPackman.Play();
             playerRotation.rotation = Quaternion.Euler(0f, -90f, 0f);
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            MovementPackman.Play();
-            playerRotation.rotation = Quaternion.Euler(0f, 90f, 0f);
-        }
-    }
+        if (Input.GetKeyDown (KeyCode.RightArrow)) {
+			MovementPackman.Play ();
+			playerRotation.rotation = Quaternion.Euler (0f, 90f, 0f);
+		} 
+		/////////////////////////////
+
+
+
+			
+
+   		}
 
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Eten")
         {
             Score++;
+			SnoepGeluid.Play();
             SetScoreText();
+
         }
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Enemy3" || collision.gameObject.tag == "Enemy4" && leven >= 1)
         {

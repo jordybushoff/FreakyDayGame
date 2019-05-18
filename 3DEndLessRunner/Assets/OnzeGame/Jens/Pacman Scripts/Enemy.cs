@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour
     float starttime = 3f;
  public static int leven = 3;
 
+	public AudioSource DeathSound;
+
   
 
     // Start is called before the first frame update
@@ -69,6 +71,7 @@ public class Enemy : MonoBehaviour
         {
             //SceneManager.LoadScene("Pacman jens");
             leven--;
+			DeathSound.Play ();
 
 			enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 			enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
