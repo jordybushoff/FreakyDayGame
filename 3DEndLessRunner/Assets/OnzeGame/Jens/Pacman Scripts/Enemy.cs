@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
 
     public float currenttime = 0f;
     public float starttime = 3f;
-    static int leven = 3;
+    public static int leven = 3;
    
 
    
@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour
        // enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
        // enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
        // enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-      //  enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+       // enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 
 
         if (currenttime <= 0)
@@ -72,10 +72,10 @@ public class Enemy : MonoBehaviour
 
 
 
-          //  enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
-          //  enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
-          //  enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
-          //  enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+         //  enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+         //  enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+         //  enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+         //  enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
         }      
 
         
