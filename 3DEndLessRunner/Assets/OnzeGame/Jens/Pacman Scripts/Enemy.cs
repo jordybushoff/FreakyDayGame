@@ -23,7 +23,14 @@ public class Enemy : MonoBehaviour
     public float currenttime = 0f;
     public float starttime = 3f;
     public static int leven = 3;
+
+   
+
+   
+
+
      
+
 	public AudioSource DeathSound;
  
     // Start is called before the first frame update
@@ -51,12 +58,33 @@ public class Enemy : MonoBehaviour
     {
         currenttime -= 1 * Time.deltaTime;
 
+
+
+       // enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+       // enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+       // enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+       // enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+
+
+
+
         if (currenttime <= 0)
         {
             //Speed = 3f;
             agent.speed = Speed;
             agent.destination = target.transform.position;
-        } 
+
+
+
+
+         //  enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+         //  enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+         //  enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+         //  enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+        }      
+
+        
+
         
         if (leven <= 0)
         {
