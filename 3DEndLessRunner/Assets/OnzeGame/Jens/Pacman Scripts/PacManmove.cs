@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class PacManmove : MonoBehaviour
 {
     public float moveSpeed;
@@ -50,6 +51,13 @@ public class PacManmove : MonoBehaviour
         ContinuousMovement();
     }
 
+	IEnumerator Test()
+	{
+		yield return new WaitForSeconds (5);
+		moveSpeed = 4f;
+		MoveRotation();
+	}
+
     void Update()
     {
         if (timer == true)
@@ -96,6 +104,8 @@ public class PacManmove : MonoBehaviour
         }     
     }
 
+
+
     public void ContinuousMovement()
     {
         playerRb.MovePosition(transform.position + transform.forward * moveSpeed * Time.deltaTime);
@@ -115,6 +125,7 @@ public class PacManmove : MonoBehaviour
             tijd.text = "0";
         }
     }
+
 
     void MoveRotation()
     {
@@ -138,9 +149,10 @@ public class PacManmove : MonoBehaviour
         if (Input.GetKeyDown (KeyCode.RightArrow)) {
 			MovementPackman.Play ();
 			playerRotation.rotation = Quaternion.Euler (0f, 90f, 0f);
-		} 		
-			
-   		}
+		} 	
+   	}
+
+
 
     public void OnCollisionEnter(Collision collision)
     {
@@ -151,6 +163,13 @@ public class PacManmove : MonoBehaviour
             SetScoreText();
 
         }
+		if (collision.gameObject.tag == "SnellerSnoep")
+		{
+			moveSpeed = 9f;
+			//StartCoroutine (Test ());
+
+			
+		}
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Enemy3" || collision.gameObject.tag == "Enemy4" && leven >= 1)
         {
             leven--;
@@ -172,6 +191,7 @@ public class PacManmove : MonoBehaviour
             ScoreText.text = "";
             scorecount();
             moveSpeed = 0f;
+			MovementPackman.Stop ();
             this.gameObject.transform.position = new Vector3(0.15f, 0.767f, 1.924f);
             Destroy(enemy1);
             Destroy(enemy2);
