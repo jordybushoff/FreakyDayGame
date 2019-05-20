@@ -19,9 +19,9 @@ public class Enemy : MonoBehaviour
     public GameObject spawnPacman;
     NavMeshAgent agent;
     float Speed = 3f;
-    float currenttime = 0f;
-    float starttime = 3f;    
-    static int leven = 3;    
+    public float currenttime = 0f;
+    public float starttime = 3f;
+    static int leven = 3;
    
     // Start is called before the first frame update
     void Start()
@@ -46,18 +46,30 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currenttime -= 1 * Time.deltaTime;       
+        currenttime -= 1 * Time.deltaTime;
+
+        enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+        enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+        enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+        enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 
         if (currenttime <= 0)
-        {
+        {          
+
             agent.speed = Speed;
             agent.destination = target.transform.position;
+
+
+            enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+            enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+            enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+            enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
         }      
 
         if (leven <= 0)
         {
             Speed = 0f;
-        }
+        }                                                                                   
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -66,21 +78,25 @@ public class Enemy : MonoBehaviour
         {
             //SceneManager.LoadScene("Pacman jens");
             leven--;
-
-			enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+            
+                        
+            enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 			enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 			enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 			enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+
             enemy1.transform.position = spawn1.transform.position;
             enemy2.transform.position = spawn2.transform.position;
             enemy3.transform.position = spawn3.transform.position;
             enemy4.transform.position = spawn4.transform.position;
             target.transform.position = new Vector3(0.15f, 0.767f, 1.924f);
-			enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
-			enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
-			enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
-			enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
-        
+
+            enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+            enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+            enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+            enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+
+            currenttime = starttime;
         }         
     }
 }

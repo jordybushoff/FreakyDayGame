@@ -10,12 +10,17 @@ public class PacManmove : MonoBehaviour
     private Rigidbody playerRb;
     private Transform playerRotation;
     public AudioSource MovementPackman;
-    public static int Score = 0;
+    public float Score = 0f;
     public static int leven = 3;
     float currenttime = 0f;
+    float currenttime2 = 0f;
+    float starttime2 = 180f;
     float starttime = 3f;
     bool timer = true;
+    bool tijdenable = false;
     public Text ScoreText;
+    public Text tijd;
+    public Text Finalscore;
     public GameObject food;
     public GameObject enemy1;
     public GameObject enemy2;
@@ -33,7 +38,10 @@ public class PacManmove : MonoBehaviour
         enemy3 = GameObject.FindGameObjectWithTag("Enemy3");
         enemy4 = GameObject.FindGameObjectWithTag("Enemy4");
         currenttime = starttime;
+        currenttime2 = starttime2;
+        tijd.text = currenttime2.ToString("0");
     }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -44,18 +52,30 @@ public class PacManmove : MonoBehaviour
     {
         if (timer == true)
         {
+           // moveSpeed = 0;
             currenttime -= 1 * Time.deltaTime;
             ScoreText.text = currenttime.ToString("0");
+            if (ScoreText.text == "0")
+            {
+                ScoreText.text = "Go!";
+            }
             if (currenttime <= 0)
             {
                 timer = false;
+                tijdenable = true;
             }
         }
 
         if (timer == false)
         {
             SetScoreText();
-            moveSpeed = 4f;
+            moveSpeed = 4f;            
+        }
+
+        if (tijdenable == true)
+        {
+            currenttime2 -= 1 * Time.deltaTime;
+            tijd.text = currenttime2.ToString("0");
         }
 
         MoveRotation();
@@ -63,7 +83,10 @@ public class PacManmove : MonoBehaviour
         {
             food = GameObject.FindGameObjectWithTag("Eten");
             Destroy(food);
-            ScoreText.text = "Defeat!";          
+            ScoreText.text = "Defeat!";
+            tijdenable = false;
+            currenttime2 = 0f;
+            tijd.text = currenttime2.ToString();
             moveSpeed = 0f;
         }
     }
@@ -107,8 +130,9 @@ public class PacManmove : MonoBehaviour
         }
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Enemy3" || collision.gameObject.tag == "Enemy4" && leven >= 1)
         {
-
             leven--;
+            currenttime = starttime;
+            timer = true;
         }      
     }
 
@@ -117,7 +141,10 @@ public class PacManmove : MonoBehaviour
         ScoreText.text = "Score: " + Score.ToString();
         if (Score >= 179)
         {
-            ScoreText.text = "Victory!";
+            tijdenable = false;
+            float finalscore = Score + currenttime2;
+            ScoreText.text = "";
+            Finalscore.text = "Finalscore: " + finalscore.ToString("0");
             Destroy(enemy1);
             Destroy(enemy2);
             Destroy(enemy3);
