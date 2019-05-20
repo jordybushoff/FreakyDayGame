@@ -23,15 +23,16 @@ public class Enemy : MonoBehaviour
     public float currenttime = 0f;
     public float starttime = 3f;
     public static int leven = 3;
+
    
 
    
+
+
+     
 
 	public AudioSource DeathSound;
-
-  
-
-
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -58,17 +59,21 @@ public class Enemy : MonoBehaviour
         currenttime -= 1 * Time.deltaTime;
 
 
+
        // enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
        // enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
        // enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
        // enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 
 
-        if (currenttime <= 0)
-        {          
 
+
+        if (currenttime <= 0)
+        {
+            //Speed = 3f;
             agent.speed = Speed;
             agent.destination = target.transform.position;
+
 
 
 
@@ -80,7 +85,7 @@ public class Enemy : MonoBehaviour
 
         
 
-
+        
         if (leven <= 0)
         {
             Speed = 0f;
@@ -93,17 +98,12 @@ public class Enemy : MonoBehaviour
         {
             //SceneManager.LoadScene("Pacman jens");
             leven--;
+            DeathSound.Play();
 
-            
-                        
-            
-
-			DeathSound.Play ();
-
-			enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-			enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-			enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-			enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+            enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+            enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+            enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+            enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 
             enemy1.transform.position = spawn1.transform.position;
             enemy2.transform.position = spawn2.transform.position;
@@ -111,18 +111,12 @@ public class Enemy : MonoBehaviour
             enemy4.transform.position = spawn4.transform.position;
             target.transform.position = new Vector3(0.15f, 0.767f, 1.924f);
 
-
             enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
             enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
             enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
             enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
-
-            currenttime = starttime;
-        }         
-
-		
-
+            
         }
-
     }
+}
 

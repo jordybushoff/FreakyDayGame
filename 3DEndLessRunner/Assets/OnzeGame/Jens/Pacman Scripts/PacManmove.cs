@@ -10,8 +10,8 @@ public class PacManmove : MonoBehaviour
     private Rigidbody playerRb;
     private Transform playerRotation;
     public AudioSource MovementPackman;
-
 	public AudioSource SnoepGeluid;
+
     public static int Score = 0;
     public static int leven = 3;
     float currenttime = 0f;
@@ -29,7 +29,6 @@ public class PacManmove : MonoBehaviour
     public GameObject enemy3;
     public GameObject enemy4;
 
-
     // Use this for initialization
     void Awake()
     {
@@ -39,8 +38,9 @@ public class PacManmove : MonoBehaviour
         enemy2 = GameObject.FindGameObjectWithTag("Enemy2");
         enemy3 = GameObject.FindGameObjectWithTag("Enemy3");
         enemy4 = GameObject.FindGameObjectWithTag("Enemy4");
-        currenttime = starttime;
+        
         currenttime2 = starttime2;
+        currenttime = starttime;
         tijd.text = currenttime2.ToString("0");
     }
 
@@ -54,10 +54,8 @@ public class PacManmove : MonoBehaviour
     {
         if (timer == true)
         {
-
-           // moveSpeed = 0;
-
-			MovementPackman.Stop ();
+            moveSpeed = 0f;
+            MovementPackman.Stop ();
 
             currenttime -= 1 * Time.deltaTime;
             ScoreText.text = currenttime.ToString("0");
@@ -95,15 +93,14 @@ public class PacManmove : MonoBehaviour
             tijd.text = currenttime2.ToString();
             moveSpeed = 0f;
 			MovementPackman.Stop ();
-
-        }
-      
+        }     
     }
 
     public void ContinuousMovement()
     {
         playerRb.MovePosition(transform.position + transform.forward * moveSpeed * Time.deltaTime);
     }
+
     void MoveRotation()
     {
         if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -126,13 +123,8 @@ public class PacManmove : MonoBehaviour
         if (Input.GetKeyDown (KeyCode.RightArrow)) {
 			MovementPackman.Play ();
 			playerRotation.rotation = Quaternion.Euler (0f, 90f, 0f);
-		} 
-		/////////////////////////////
-
-
-
+		} 		
 			
-
    		}
 
     public void OnCollisionEnter(Collision collision)
@@ -149,6 +141,10 @@ public class PacManmove : MonoBehaviour
             leven--;
             currenttime = starttime;
             timer = true;
+            GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>().currenttime = starttime; 
+            GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Enemy>().currenttime = starttime; 
+            GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Enemy>().currenttime = starttime; 
+            GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().currenttime = starttime; 
         }      
     }
 
@@ -161,6 +157,8 @@ public class PacManmove : MonoBehaviour
             float finalscore = Score + currenttime2;
             ScoreText.text = "";
             Finalscore.text = "Finalscore: " + finalscore.ToString("0");
+            moveSpeed = 0f;
+            this.gameObject.transform.position = new Vector3(0.15f, 0.767f, 1.924f);
             Destroy(enemy1);
             Destroy(enemy2);
             Destroy(enemy3);
