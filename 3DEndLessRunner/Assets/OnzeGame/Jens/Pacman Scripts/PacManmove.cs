@@ -10,7 +10,9 @@ public class PacManmove : MonoBehaviour
     private Rigidbody playerRb;
     private Transform playerRotation;
     public AudioSource MovementPackman;
-    public float Score = 0f;
+
+	public AudioSource SnoepGeluid;
+    public static int Score = 0;
     public static int leven = 3;
     float currenttime = 0f;
     float currenttime2 = 0f;
@@ -52,7 +54,11 @@ public class PacManmove : MonoBehaviour
     {
         if (timer == true)
         {
+
            // moveSpeed = 0;
+
+			MovementPackman.Stop ();
+
             currenttime -= 1 * Time.deltaTime;
             ScoreText.text = currenttime.ToString("0");
             if (ScoreText.text == "0")
@@ -88,7 +94,10 @@ public class PacManmove : MonoBehaviour
             currenttime2 = 0f;
             tijd.text = currenttime2.ToString();
             moveSpeed = 0f;
+			MovementPackman.Stop ();
+
         }
+      
     }
 
     public void ContinuousMovement()
@@ -114,19 +123,26 @@ public class PacManmove : MonoBehaviour
             MovementPackman.Play();
             playerRotation.rotation = Quaternion.Euler(0f, -90f, 0f);
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            MovementPackman.Play();
-            playerRotation.rotation = Quaternion.Euler(0f, 90f, 0f);
-        }
-    }
+        if (Input.GetKeyDown (KeyCode.RightArrow)) {
+			MovementPackman.Play ();
+			playerRotation.rotation = Quaternion.Euler (0f, 90f, 0f);
+		} 
+		/////////////////////////////
+
+
+
+			
+
+   		}
 
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Eten")
         {
             Score++;
+			SnoepGeluid.Play();
             SetScoreText();
+
         }
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Enemy3" || collision.gameObject.tag == "Enemy4" && leven >= 1)
         {

@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
 
 
     AudioSource _AudioSource;
+    public bool isDead;
     public int JumpForce;
     public int ZweefForce;
     public int Speed;
@@ -197,7 +198,9 @@ public class Player : MonoBehaviour
         {
             if (Coll.gameObject.tag == "Trap") //W
             {
+                isDead = true;
                 LastPosition = new Vector3(transform.position.x + 3, 0, 0); // reset player naar de volgende positie
+
                 GetCurrentPlayerState(PlayerStates.Die); //Verander player state naar, die
             }
         }

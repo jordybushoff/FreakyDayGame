@@ -19,18 +19,27 @@ public class Enemy : MonoBehaviour
     public GameObject spawnPacman;
     NavMeshAgent agent;
     float Speed = 3f;
+
     public float currenttime = 0f;
     public float starttime = 3f;
     static int leven = 3;
    
+
+   
+
+	public AudioSource DeathSound;
+
+  
+
+
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         currenttime = starttime;
-        
+
         if (target == null)
-        { 
+        {
             target = GameObject.FindGameObjectWithTag("Player");
         }
         enemy1 = GameObject.FindGameObjectWithTag("Enemy");
@@ -48,10 +57,12 @@ public class Enemy : MonoBehaviour
     {
         currenttime -= 1 * Time.deltaTime;
 
-        enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-        enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-        enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-        enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+
+       // enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+       // enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+       // enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+      //  enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+
 
         if (currenttime <= 0)
         {          
@@ -60,11 +71,15 @@ public class Enemy : MonoBehaviour
             agent.destination = target.transform.position;
 
 
-            enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
-            enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
-            enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
-            enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+
+          //  enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+          //  enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+          //  enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+          //  enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
         }      
+
+        
+
 
         if (leven <= 0)
         {
@@ -78,9 +93,14 @@ public class Enemy : MonoBehaviour
         {
             //SceneManager.LoadScene("Pacman jens");
             leven--;
+
             
                         
-            enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+            
+
+			DeathSound.Play ();
+
+			enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 			enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 			enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 			enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
@@ -91,6 +111,7 @@ public class Enemy : MonoBehaviour
             enemy4.transform.position = spawn4.transform.position;
             target.transform.position = new Vector3(0.15f, 0.767f, 1.924f);
 
+
             enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
             enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
             enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
@@ -98,5 +119,10 @@ public class Enemy : MonoBehaviour
 
             currenttime = starttime;
         }         
+
+		
+
+        }
+
     }
-}
+
