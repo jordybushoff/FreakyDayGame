@@ -2463,6 +2463,7 @@ MonoBehaviour:
   spawn3: {fileID: 2073757379}
   spawn4: {fileID: 504114093}
   spawnPacman: {fileID: 0}
+  Speed: 3
   currenttime: 0
   starttime: 3
   DeathSound: {fileID: 367509211}
@@ -3229,7 +3230,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 469.59, y: 241.43}
+  m_AnchoredPosition: {x: -326, y: 138}
   m_SizeDelta: {x: 162.41, y: 69.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &461135338
@@ -3551,6 +3552,7 @@ MonoBehaviour:
   spawn3: {fileID: 2073757379}
   spawn4: {fileID: 504114093}
   spawnPacman: {fileID: 0}
+  Speed: 3
   currenttime: 0
   starttime: 3
   DeathSound: {fileID: 367509211}
@@ -11221,6 +11223,7 @@ MonoBehaviour:
   spawn3: {fileID: 2073757379}
   spawn4: {fileID: 504114093}
   spawnPacman: {fileID: 0}
+  Speed: 3
   currenttime: 0
   starttime: 3
   DeathSound: {fileID: 367509211}
@@ -16177,6 +16180,7 @@ MonoBehaviour:
   spawn3: {fileID: 2073757379}
   spawn4: {fileID: 504114093}
   spawnPacman: {fileID: 0}
+  Speed: 3
   currenttime: 0
   starttime: 3
   DeathSound: {fileID: 367509211}
@@ -16840,7 +16844,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1857763079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1883477229}
@@ -16848,7 +16852,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 44.18}
+  m_AnchoredPosition: {x: 272, y: 129}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1857763081
@@ -17113,7 +17117,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -17132,9 +17136,9 @@ Canvas:
   m_GameObject: {fileID: 1883477225}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 729119626}
+  m_PlaneDistance: 5.1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -19647,7 +19651,7 @@ PrefabInstance:
     - target: {fileID: 5409605642579298665, guid: 68de6f7276742034a88d08a843ffdf76,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5409605642579298665, guid: 68de6f7276742034a88d08a843ffdf76,
         type: 3}
@@ -19692,12 +19696,12 @@ PrefabInstance:
     - target: {fileID: 5409605642579298665, guid: 68de6f7276742034a88d08a843ffdf76,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000015259
+      value: 299
       objectReference: {fileID: 0}
     - target: {fileID: 5409605642579298665, guid: 68de6f7276742034a88d08a843ffdf76,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 45.7
+      value: 136
       objectReference: {fileID: 0}
     - target: {fileID: 5409605642579298665, guid: 68de6f7276742034a88d08a843ffdf76,
         type: 3}

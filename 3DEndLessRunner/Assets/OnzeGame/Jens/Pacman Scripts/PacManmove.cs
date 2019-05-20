@@ -101,6 +101,21 @@ public class PacManmove : MonoBehaviour
         playerRb.MovePosition(transform.position + transform.forward * moveSpeed * Time.deltaTime);
     }
 
+    public void scorecount()
+    {
+        if (currenttime2 > 0)
+        {
+            currenttime2--;
+            tijd.text = currenttime2.ToString("0");            
+            Score++;
+            Finalscore.text = "Finalscore: " + Score.ToString();
+        }
+        else if (tijd.text == "-1")
+        {
+            tijd.text = "0";
+        }
+    }
+
     void MoveRotation()
     {
         if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -153,10 +168,9 @@ public class PacManmove : MonoBehaviour
         ScoreText.text = "Score: " + Score.ToString();
         if (Score >= 179)
         {
-            tijdenable = false;
-            float finalscore = Score + currenttime2;
+            tijdenable = false;           
             ScoreText.text = "";
-            Finalscore.text = "Finalscore: " + finalscore.ToString("0");
+            scorecount();
             moveSpeed = 0f;
             this.gameObject.transform.position = new Vector3(0.15f, 0.767f, 1.924f);
             Destroy(enemy1);

@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     public GameObject spawn4;
     public GameObject spawnPacman;
     NavMeshAgent agent;
-    float Speed = 3f;
+    public float Speed = 3f;
 
     public float currenttime = 0f;
     public float starttime = 3f;
