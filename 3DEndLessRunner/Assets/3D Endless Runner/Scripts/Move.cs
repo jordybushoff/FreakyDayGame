@@ -23,7 +23,7 @@ public class Move : MonoBehaviour {
 			_Animator.SetBool ("InGame", true);
 		}
 
-		if ( _player .CurrentPlayerState == PlayerStates.Live || _player .CurrentPlayerState == PlayerStates.Ready) {
+		if ( _player .CurrentPlayerState == PlayerStates2.Live || _player .CurrentPlayerState == PlayerStates2.Ready) {
 			transform.position = new Vector3 (_player.transform.position.x + Xpos, transform.position.y, -250);
 		}
 	

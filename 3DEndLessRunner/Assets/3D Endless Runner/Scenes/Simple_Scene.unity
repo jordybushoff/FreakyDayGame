@@ -313,5 +313,48 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4265993740542811657, guid: 74c79dfe432211943a76db6ddd610cd4,
+        type: 3}
+      propertyPath: JumpForce
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265993740542811657, guid: 74c79dfe432211943a76db6ddd610cd4,
+        type: 3}
+      propertyPath: Speed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265993740542811657, guid: 74c79dfe432211943a76db6ddd610cd4,
+        type: 3}
+      propertyPath: CurrentPlayerState
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4265993740542811657, guid: 74c79dfe432211943a76db6ddd610cd4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 74c79dfe432211943a76db6ddd610cd4, type: 3}
+--- !u!1 &2029272183 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 195160, guid: 74c79dfe432211943a76db6ddd610cd4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1874918528}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2029272184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029272183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd1ed49e320d7aa40815091c92f19f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentPlayerState: 0
+  JumpForce: 80
+  ZweefForce: 0
+  Speed: 120
+  PilarDistanceup: 0
+  PilarDistancedown: 0
+  JetPackAudio: {fileID: 0}
+  DieAudio: {fileID: 8300000, guid: 13462b0a12bc7054bb5bdecb7c17ce58, type: 3}
+  SmokeParticle: {fileID: 0}

@@ -3,14 +3,15 @@ using UnityEngine;
 using System.Collections;
 
 
-public enum PlayerStates{
+public enum PlayerStates2{
 	Start,
 	Ready,
 	Live,
 	Die
 }
+
 public class Player : MonoBehaviour {
-	public PlayerStates CurrentPlayerState = PlayerStates.Start;
+	public PlayerStates2 CurrentPlayerState = PlayerStates2.Start;
 	Rigidbody _Rigidbody;
 	GameManager _GameManager;
 	Animator _Animator;
@@ -66,11 +67,11 @@ public class Player : MonoBehaviour {
 			if (_AudioSource.isPlaying == false)//Als het geluid niet afspeelt --->
 				_AudioSource.Play ();// ---> Speel het geluid af.
 			_Animator.SetBool ("InGame", true); //geeft een boolean value door aan een animatie controller
-			GetCurrentPlayerState (PlayerStates.Live); // De game is in de live state.
+			GetCurrentPlayerState (PlayerStates2.Live); // De game is in de live state.
 		}
 
 
-		if (CurrentPlayerState == PlayerStates.Live) {
+		if (CurrentPlayerState == PlayerStates2.Live) {
 
 			player = GameObject.FindGameObjectWithTag ("Player");
 			_Rigidbody.velocity = new Vector2 (Speed, _Rigidbody.velocity.y); // Speed
@@ -154,7 +155,7 @@ public class Player : MonoBehaviour {
 				_Rigidbody.velocity = new Vector2 (_Rigidbody.velocity.x, JumpForce);
 			}
 
-			if (CurrentPlayerState == PlayerStates.Live) { //wanneer de huidige player state live is, voer het volgende uit:
+			if (CurrentPlayerState == PlayerStates2.Live) { //wanneer de huidige player state live is, voer het volgende uit:
 
 				_Rigidbody.velocity = new Vector2 (Speed, _Rigidbody.velocity.y); //Snelheid van de physics (verticale jump physics?)
 
@@ -179,11 +180,11 @@ public class Player : MonoBehaviour {
 
 	void OnCollisionEnter(Collision Coll) //Wanneer er een collision met een trap plaatsvindt:
 	{
-		if (CurrentPlayerState == PlayerStates.Live) {
+		if (CurrentPlayerState == PlayerStates2.Live) {
 			if (Coll.gameObject.tag == "Trap") //W
 			{
 				LastPosition = new Vector3 (transform.position.x+3,0,0); // reset player naar de volgende positie
-				GetCurrentPlayerState (PlayerStates.Die); //Verander player state naar, die
+				GetCurrentPlayerState (PlayerStates2.Die); //Verander player state naar, die
 			}
 		}
 
@@ -191,7 +192,7 @@ public class Player : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) //wanneer de speler succesvol door een trap springt (???)
 	{
-		if (CurrentPlayerState == PlayerStates.Live) {
+		if (CurrentPlayerState == PlayerStates2.Live) {
 			if (other.tag == "Score") 
 			{
 				_GameManager.GetScore (1); //Tel 1 puntje er bij
@@ -200,7 +201,7 @@ public class Player : MonoBehaviour {
 
 	}
 	//
-	public void GetCurrentPlayerState (PlayerStates State)
+	public void GetCurrentPlayerState (PlayerStates2 State)
 	{
 		CurrentPlayerState = State; //GetState
 		Refresh ();
@@ -209,7 +210,7 @@ public class Player : MonoBehaviour {
 	void Refresh(){
 		switch (CurrentPlayerState)
 		{
-		case PlayerStates.Ready: //Wanneer de state, ready is
+		case PlayerStates2.Ready: //Wanneer de state, ready is
 			{
 				transform.position = LastPosition; //(Default positie?)
 				transform.rotation = Quaternion.Euler (0,0,0); // returned een rotatie die Z graden roteerd om de Z As, X graden om de X as en y graden om de y as.
@@ -218,12 +219,12 @@ public class Player : MonoBehaviour {
 				_Rigidbody.freezeRotation = true; // bepaalt of physics de rotatie van het object beinvloeden
 			}
 			break;
-		case PlayerStates.Live: // als state live is
+		case PlayerStates2.Live: // als state live is
 			{
 				_Rigidbody.useGravity = true; // zorgt ervoor dat gravity actief wordt en de rigidbody daarmee beinvloed.
 			}
 			break;
-		case PlayerStates.Die: // als state die is
+		case PlayerStates2.Die: // als state die is
 			{
 				_Rigidbody.freezeRotation = false; //physics beinvloeden de rotatie van het object niet meer
 				_AudioSource.PlayOneShot (DieAudio); //speel audio effect af wanneer de state die is.

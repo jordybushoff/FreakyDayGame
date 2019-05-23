@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour {
 	public IEnumerator ContinueGame(){
 		 
 		_AnimCanvas.SetBool ("EndGame",false);
-		_Player.GetCurrentPlayerState (PlayerStates.Ready);
+		_Player.GetCurrentPlayerState (PlayerStates2.Ready);
 		yield return new WaitForSeconds (1f);
 		TxtCounter.text = "" + 3;
 		yield return new WaitForSeconds (1f);
