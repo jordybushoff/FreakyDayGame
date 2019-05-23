@@ -7,13 +7,10 @@ public class Restart : MonoBehaviour {
 
 
     public void RestartGame()
-    {
-      
+    {     
         SceneManager.LoadScene("pacmanmar");
         PacManmove.leven = 4;
         PacManmove.Score = 0;
-        Enemy.leven = 3;
-        
-
+        Enemy.leven = 4;        
     }
 }
