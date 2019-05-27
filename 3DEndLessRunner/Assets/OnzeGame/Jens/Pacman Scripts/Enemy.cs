@@ -22,14 +22,9 @@ public class Enemy : MonoBehaviour
 
     public float currenttime = 0f;
     public float starttime = 3f;
+    public float powercurrent = 0;
     public static int leven = 3;
-
-   
-
-   
-
-
-     
+    public bool powerup = false;
 
 	public AudioSource DeathSound;
  
@@ -58,45 +53,33 @@ public class Enemy : MonoBehaviour
     {
         currenttime -= 1 * Time.deltaTime;
 
-
-
-       // enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-       // enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-       // enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-       // enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-
-
-
-
-        if (currenttime <= 0)
-        {
-            //Speed = 3f;
+        if (currenttime <= 0 && powerup == false)
+        {            
             agent.speed = Speed;
-            agent.destination = target.transform.position;
-
-
-
-
-         //  enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
-         //  enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
-         //  enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
-         //  enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+            agent.destination = target.transform.position;      
         }      
-
-        
-
-        
+     
         if (leven <= 0)
         {
             Speed = 0f;
-        }                                                                                   
+        } 
+        
+       if (powerup == true)
+        {
+            powercurrent -= 1 * Time.deltaTime;
+            agent.destination = -target.transform.position;
+            if (powercurrent <= 0)
+            {
+                powerup = false;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PacManmove>().check = false;
+            }
+        }        
     }
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && powerup == false)
         {
-            //SceneManager.LoadScene("Pacman jens");
             leven--;
             DeathSound.Play();
 
@@ -114,8 +97,15 @@ public class Enemy : MonoBehaviour
             enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
             enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
             enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
-            enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
-            
+            enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;              
+        }
+        if (collision.gameObject.tag == "Player" && powerup == true)
+        {           
+            this.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+            this.transform.position = spawn1.transform.position;
+            this.currenttime = this.starttime;
+            this.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PacManmove>().currenttime2 += 10f;
         }
     }
 }
