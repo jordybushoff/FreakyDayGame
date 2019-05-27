@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerPacman : MonoBehaviour
+public class PlayerPacman1 : MonoBehaviour
 {
     public float moveSpeed;
 

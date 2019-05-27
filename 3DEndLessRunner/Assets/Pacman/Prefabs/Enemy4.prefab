@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6544717107984677029}
   - component: {fileID: 6544717107984677030}
   - component: {fileID: 6544717107984677031}
-  - component: {fileID: 6544717107984677033}
   - component: {fileID: 6643584483402955309}
   m_Layer: 0
   m_Name: Enemy4
@@ -114,20 +113,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6544717107984677033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6544717107984677034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ca784022b5f6e24f94058fd16a0eafb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  Speed: 4
 --- !u!195 &6643584483402955309
 NavMeshAgent:
   m_ObjectHideFlags: 0
