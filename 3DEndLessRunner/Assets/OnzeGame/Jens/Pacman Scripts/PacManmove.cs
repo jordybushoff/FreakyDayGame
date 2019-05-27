@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class PacManmove : MonoBehaviour
 {
     public float moveSpeed;
@@ -16,15 +15,17 @@ public class PacManmove : MonoBehaviour
     public static int Score = 0;
     public static int leven = 3;
     float currenttime = 0f;
-    float currenttime2 = 0f;
+    public float currenttime2 = 0f;
     float starttime2 = 180f;
     float starttime = 3f;
     bool timer = true;
     bool tijdenable = false;
+    public bool check = false;
     public Text ScoreText;
     public Text tijd;
     public Text Finalscore;
     public GameObject food;
+    public GameObject power;
     public GameObject enemy1;
     public GameObject enemy2;
     public GameObject enemy3;
@@ -50,13 +51,6 @@ public class PacManmove : MonoBehaviour
     {
         ContinuousMovement();
     }
-
-	IEnumerator Test()
-	{
-		yield return new WaitForSeconds (5);
-		moveSpeed = 4f;
-		MoveRotation();
-	}
 
     void Update()
     {
@@ -94,7 +88,9 @@ public class PacManmove : MonoBehaviour
         if (leven <= 0)
         {
             food = GameObject.FindGameObjectWithTag("Eten");
+            power = GameObject.FindGameObjectWithTag("Destroyer");
             Destroy(food);
+            Destroy(power);
             ScoreText.text = "Defeat!";
             tijdenable = false;
             currenttime2 = 0f;
@@ -103,8 +99,6 @@ public class PacManmove : MonoBehaviour
 			MovementPackman.Stop ();
         }     
     }
-
-
 
     public void ContinuousMovement()
     {
@@ -125,7 +119,6 @@ public class PacManmove : MonoBehaviour
             tijd.text = "0";
         }
     }
-
 
     void MoveRotation()
     {
@@ -149,10 +142,9 @@ public class PacManmove : MonoBehaviour
         if (Input.GetKeyDown (KeyCode.RightArrow)) {
 			MovementPackman.Play ();
 			playerRotation.rotation = Quaternion.Euler (0f, 90f, 0f);
-		} 	
-   	}
-
-
+		} 		
+			
+   		}
 
     public void OnCollisionEnter(Collision collision)
     {
@@ -161,18 +153,26 @@ public class PacManmove : MonoBehaviour
             Score++;
 			SnoepGeluid.Play();
             SetScoreText();
-
         }
-		if (collision.gameObject.tag == "SnellerSnoep")
-		{
-			moveSpeed = 9f;
-			//StartCoroutine (Test ());
-
-			
-		}
-        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Enemy3" || collision.gameObject.tag == "Enemy4" && leven >= 1)
+        if (collision.gameObject.tag == "Destroyer")
+        {
+            Score++;
+            SnoepGeluid.Play();
+            SetScoreText();
+            check = true;
+            GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>().powerup = true;
+            GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Enemy>().powerup = true;
+            GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Enemy>().powerup = true;
+            GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().powerup = true;
+            GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>().powercurrent = 10f;
+            GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Enemy>().powercurrent = 10f;
+            GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Enemy>().powercurrent = 10f;
+            GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().powercurrent = 10f;
+        }
+        if (collision.gameObject.tag == "Enemy2" && leven >= 1 && check == false || collision.gameObject.tag == "Enemy" && leven >= 1 && check == false || collision.gameObject.tag == "Enemy3" && leven >= 1 && check == false || collision.gameObject.tag == "Enemy4" && leven >= 1 && check == false)
         {
             leven--;
+            currenttime2 -= 20f;
             currenttime = starttime;
             timer = true;
             GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>().currenttime = starttime; 
@@ -191,7 +191,6 @@ public class PacManmove : MonoBehaviour
             ScoreText.text = "";
             scorecount();
             moveSpeed = 0f;
-			MovementPackman.Stop ();
             this.gameObject.transform.position = new Vector3(0.15f, 0.767f, 1.924f);
             Destroy(enemy1);
             Destroy(enemy2);
