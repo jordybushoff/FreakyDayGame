@@ -19,6 +19,7 @@ TagManager:
   - Spawn2
   - Spawn3
   - Spawn4
+  - SnellerSnoep
   layers:
   - Default
   - TransparentFX
