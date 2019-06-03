@@ -13,7 +13,7 @@ public class PacManmove : MonoBehaviour
     public static int Score = 0;
     public static int leven = 3;
     float currenttime = 0f;
-    float starttime = 3f;
+   public float starttime = 3f;
     bool timer = true;
     public Text ScoreText;
     public GameObject food;
