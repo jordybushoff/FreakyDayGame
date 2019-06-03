@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
     {
         currenttime -= 1 * Time.deltaTime;
 
-        if (currenttime <= 0 && powerup == false)
+        if (currenttime <= 0 && powerup == false )
         {            
             agent.speed = Speed;
             agent.destination = target.transform.position;      

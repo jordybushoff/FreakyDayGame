@@ -291,7 +291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2064243663, guid: 24d8ea148f04e924a86fd2a29603fcca, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2064243663, guid: 24d8ea148f04e924a86fd2a29603fcca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11832,6 +11832,8 @@ MonoBehaviour:
   Speed: 3
   currenttime: 0
   starttime: 3
+  powercurrent: 0
+  powerup: 0
   DeathSound: {fileID: 1879006096}
 --- !u!4 &342051034 stripped
 Transform:
@@ -12746,6 +12748,8 @@ MonoBehaviour:
   Speed: 3
   currenttime: 0
   starttime: 3
+  powercurrent: 0
+  powerup: 0
   DeathSound: {fileID: 1879006096}
 --- !u!4 &518597545 stripped
 Transform:
@@ -15297,7 +15301,6 @@ Transform:
   - {fileID: 461577878}
   - {fileID: 1380095589}
   - {fileID: 1110212371}
-  - {fileID: 518597545}
   - {fileID: 1483743246}
   - {fileID: 959370027}
   - {fileID: 1740286601}
@@ -15322,6 +15325,7 @@ Transform:
   - {fileID: 583239857}
   - {fileID: 1703558953}
   - {fileID: 1825816327}
+  - {fileID: 518597545}
   - {fileID: 389591012}
   - {fileID: 1681254881}
   - {fileID: 1684115627}
@@ -20742,6 +20746,8 @@ MonoBehaviour:
   Speed: 3
   currenttime: 0
   starttime: 3
+  powercurrent: 0
+  powerup: 0
   DeathSound: {fileID: 1879006096}
 --- !u!1001 &1398669641
 PrefabInstance:
@@ -30905,6 +30911,8 @@ MonoBehaviour:
   Speed: 3
   currenttime: 0
   starttime: 3
+  powercurrent: 0
+  powerup: 0
   DeathSound: {fileID: 1879006096}
 --- !u!1 &1786631057 stripped
 GameObject:
@@ -39459,6 +39467,26 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5259747171204866766, guid: 0355ead65807dae4c981039ad8a033ff,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547298252598049759, guid: 0355ead65807dae4c981039ad8a033ff,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547298252598049756, guid: 0355ead65807dae4c981039ad8a033ff,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547298252598049756, guid: 0355ead65807dae4c981039ad8a033ff,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547298252598049757, guid: 0355ead65807dae4c981039ad8a033ff,
         type: 3}
       propertyPath: m_Enabled
       value: 1

@@ -144,7 +144,7 @@ public class PacManmove : MonoBehaviour
 			playerRotation.rotation = Quaternion.Euler (0f, 90f, 0f);
 		} 		
 			
-   		}
+   	}
 
     public void OnCollisionEnter(Collision collision)
     {
@@ -179,7 +179,7 @@ public class PacManmove : MonoBehaviour
             GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Enemy>().currenttime = starttime; 
             GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Enemy>().currenttime = starttime; 
             GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().currenttime = starttime; 
-        }      
+        }   
     }
 
     public void SetScoreText()
