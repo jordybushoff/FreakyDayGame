@@ -15,9 +15,13 @@ public class PacManmove : MonoBehaviour
     public static int Score = 0;
     public static int leven = 3;
     float currenttime = 0f;
+
+   
+
     public float currenttime2 = 0f;
     float starttime2 = 180f;
     float starttime = 3f;
+
     bool timer = true;
     bool tijdenable = false;
     public bool check = false;
@@ -35,12 +39,12 @@ public class PacManmove : MonoBehaviour
     void Awake()
     {
         playerRotation = GetComponent<Transform>();
-        playerRb = GetComponent<Rigidbody>();              
+        playerRb = GetComponent<Rigidbody>();
         enemy1 = GameObject.FindGameObjectWithTag("Enemy");
         enemy2 = GameObject.FindGameObjectWithTag("Enemy2");
         enemy3 = GameObject.FindGameObjectWithTag("Enemy3");
         enemy4 = GameObject.FindGameObjectWithTag("Enemy4");
-        
+
         currenttime2 = starttime2;
         currenttime = starttime;
         tijd.text = currenttime2.ToString("0");
@@ -75,7 +79,7 @@ public class PacManmove : MonoBehaviour
         if (timer == false)
         {
             SetScoreText();
-            moveSpeed = 4f;            
+            moveSpeed = 4f;
         }
 
         if (tijdenable == true)
@@ -97,7 +101,7 @@ public class PacManmove : MonoBehaviour
             tijd.text = currenttime2.ToString();
             moveSpeed = 0f;
 			MovementPackman.Stop ();
-        }     
+        }
     }
 
     public void ContinuousMovement()
@@ -110,7 +114,7 @@ public class PacManmove : MonoBehaviour
         if (currenttime2 > 0)
         {
             currenttime2--;
-            tijd.text = currenttime2.ToString("0");            
+            tijd.text = currenttime2.ToString("0");
             Score++;
             Finalscore.text = "Finalscore: " + Score.ToString();
         }
@@ -142,10 +146,11 @@ public class PacManmove : MonoBehaviour
         if (Input.GetKeyDown (KeyCode.RightArrow)) {
 			MovementPackman.Play ();
 			playerRotation.rotation = Quaternion.Euler (0f, 90f, 0f);
+
 		} 		
 			
    	}
-
+    
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Eten")
@@ -175,11 +180,17 @@ public class PacManmove : MonoBehaviour
             currenttime2 -= 20f;
             currenttime = starttime;
             timer = true;
+
             GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>().currenttime = starttime; 
             GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Enemy>().currenttime = starttime; 
             GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Enemy>().currenttime = starttime; 
             GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().currenttime = starttime; 
         }   
+            GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>().currenttime = starttime;
+            GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Enemy>().currenttime = starttime;
+            GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Enemy>().currenttime = starttime;
+            GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().currenttime = starttime;
+        
     }
 
     public void SetScoreText()
@@ -187,7 +198,7 @@ public class PacManmove : MonoBehaviour
         ScoreText.text = "Score: " + Score.ToString();
         if (Score >= 179)
         {
-            tijdenable = false;           
+            tijdenable = false;
             ScoreText.text = "";
             scorecount();
             moveSpeed = 0f;
