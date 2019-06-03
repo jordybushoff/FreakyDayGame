@@ -14523,7 +14523,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729119624}
   m_LocalRotation: {x: 0.5148738, y: -0, z: -0, w: 0.85726607}
-  m_LocalPosition: {x: 0, y: 20.24, z: -5}
+  m_LocalPosition: {x: 0, y: 22.5, z: -11.5}
   m_LocalScale: {x: 1, y: 0.63735, z: -2.1266518}
   m_Children: []
   m_Father: {fileID: 0}
@@ -16378,7 +16378,7 @@ GameObject:
   - component: {fileID: 922624897}
   m_Layer: 0
   m_Name: CameraChangeCube
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16391,7 +16391,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 922624894}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.51, y: 1, z: 15}
@@ -16404,7 +16404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 922624894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.13, y: 0.933, z: 16.84}
+  m_LocalPosition: {x: 0.13, y: 0.933, z: 18.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -16422,8 +16422,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11621b9354f373744b70122ef0b4074e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstperson: {fileID: 2018563462}
   normalCamera: {fileID: 729119626}
+  rampCamera: {fileID: 2018563462}
+  enemy1: {fileID: 340471577}
+  enemy2: {fileID: 516291147}
+  enemy3: {fileID: 1785473254}
+  enemy4: {fileID: 1397432736}
 --- !u!1001 &931689363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16672,6 +16676,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cc1cf69b67635f40a12685a97f5e587, type: 3}
+--- !u!1 &944751182 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4583094348317085309, guid: f8165bf4acfc83f498d4ed746f116f6e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1368095809}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &944751187
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944751182}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: -0.02, y: 0.015944844, z: 0.012837614}
+  m_Center: {x: -0.00026741132, y: 0.0016, z: 0.00092737447}
 --- !u!1001 &953299592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21076,6 +21099,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 190.37767
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679136618208575775, guid: f8165bf4acfc83f498d4ed746f116f6e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8165bf4acfc83f498d4ed746f116f6e, type: 3}
@@ -38431,7 +38459,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018563461}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!4 &2018563464
 Transform:
   m_ObjectHideFlags: 0
