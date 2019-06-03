@@ -34,6 +34,7 @@ public class PacManmove : MonoBehaviour
     public GameObject enemy2;
     public GameObject enemy3;
     public GameObject enemy4;
+    public GameObject steen;
 
     // Use this for initialization
     void Awake()
@@ -44,6 +45,7 @@ public class PacManmove : MonoBehaviour
         enemy2 = GameObject.FindGameObjectWithTag("Enemy2");
         enemy3 = GameObject.FindGameObjectWithTag("Enemy3");
         enemy4 = GameObject.FindGameObjectWithTag("Enemy4");
+        steen = GameObject.FindGameObjectWithTag("Finish");
 
         currenttime2 = starttime2;
         currenttime = starttime;
@@ -185,12 +187,7 @@ public class PacManmove : MonoBehaviour
             GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Enemy>().currenttime = starttime; 
             GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Enemy>().currenttime = starttime; 
             GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().currenttime = starttime; 
-        }   
-            GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>().currenttime = starttime;
-            GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Enemy>().currenttime = starttime;
-            GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Enemy>().currenttime = starttime;
-            GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().currenttime = starttime;
-        
+        }                     
     }
 
     public void SetScoreText()
@@ -200,13 +197,12 @@ public class PacManmove : MonoBehaviour
         {
             tijdenable = false;
             ScoreText.text = "";
-            scorecount();
-            moveSpeed = 0f;
-            this.gameObject.transform.position = new Vector3(0.15f, 0.767f, 1.924f);
+            scorecount();           
             Destroy(enemy1);
             Destroy(enemy2);
             Destroy(enemy3);
             Destroy(enemy4);
+            Destroy(steen);
         }
     }
 }
