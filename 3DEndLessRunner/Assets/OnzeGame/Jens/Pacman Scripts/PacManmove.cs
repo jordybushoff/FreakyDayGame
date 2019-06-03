@@ -16,7 +16,7 @@ public class PacManmove : MonoBehaviour
     public static int leven = 3;
     float currenttime = 0f;
 
-   public float starttime = 3f;
+   
 
     public float currenttime2 = 0f;
     float starttime2 = 180f;
