@@ -100,9 +100,9 @@ public class Enemy : MonoBehaviour
             enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;              
         }
         if (collision.gameObject.tag == "Player" && powerup == true)
-        {           
-            this.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+        {
             this.transform.position = spawn1.transform.position;
+            this.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;           
             this.currenttime = this.starttime;
             this.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
             GameObject.FindGameObjectWithTag("Player").GetComponent<PacManmove>().currenttime2 += 10f;

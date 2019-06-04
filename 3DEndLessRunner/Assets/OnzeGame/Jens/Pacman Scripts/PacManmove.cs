@@ -15,16 +15,16 @@ public class PacManmove : MonoBehaviour
     public static int Score = 0;
     public static int leven = 3;
     float currenttime = 0f;
-
-   
-
     public float currenttime2 = 0f;
     float starttime2 = 180f;
     float starttime = 3f;
+    float speedcurrent = 0f;
+    float speedstart = 5f;
 
     bool timer = true;
     bool tijdenable = false;
     public bool check = false;
+    bool snelpower = false;
     public Text ScoreText;
     public Text tijd;
     public Text Finalscore;
@@ -35,6 +35,7 @@ public class PacManmove : MonoBehaviour
     public GameObject enemy3;
     public GameObject enemy4;
     public GameObject steen;
+    public GameObject sneller;
 
     // Use this for initialization
     void Awake()
@@ -46,9 +47,10 @@ public class PacManmove : MonoBehaviour
         enemy3 = GameObject.FindGameObjectWithTag("Enemy3");
         enemy4 = GameObject.FindGameObjectWithTag("Enemy4");
         steen = GameObject.FindGameObjectWithTag("Finish");
+        sneller = GameObject.FindGameObjectWithTag("SnellerSnoep");
 
         currenttime2 = starttime2;
-        currenttime = starttime;
+        currenttime = starttime;       
         tijd.text = currenttime2.ToString("0");
     }
 
@@ -88,6 +90,17 @@ public class PacManmove : MonoBehaviour
         {
             currenttime2 -= 1 * Time.deltaTime;
             tijd.text = currenttime2.ToString("0");
+        }
+
+        if (snelpower == true)
+        {           
+            moveSpeed = 10f;
+            speedcurrent -= 1 * Time.deltaTime;
+
+            if (speedcurrent <= 0)
+            {
+                snelpower = false;
+            }
         }
 
         MoveRotation();
@@ -148,9 +161,7 @@ public class PacManmove : MonoBehaviour
         if (Input.GetKeyDown (KeyCode.RightArrow)) {
 			MovementPackman.Play ();
 			playerRotation.rotation = Quaternion.Euler (0f, 90f, 0f);
-
-		} 		
-			
+		} 					
    	}
     
     public void OnCollisionEnter(Collision collision)
@@ -160,6 +171,14 @@ public class PacManmove : MonoBehaviour
             Score++;
 			SnoepGeluid.Play();
             SetScoreText();
+        }
+        if (collision.gameObject.tag == "SnellerSnoep")
+        {
+            Score++;
+            SnoepGeluid.Play();
+            SetScoreText();
+            speedcurrent = speedstart;
+            snelpower = true;
         }
         if (collision.gameObject.tag == "Destroyer")
         {
@@ -171,14 +190,15 @@ public class PacManmove : MonoBehaviour
             GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Enemy>().powerup = true;
             GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Enemy>().powerup = true;
             GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().powerup = true;
-            GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>().powercurrent = 10f;
-            GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Enemy>().powercurrent = 10f;
-            GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Enemy>().powercurrent = 10f;
-            GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().powercurrent = 10f;
+            GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>().powercurrent = 7f;
+            GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Enemy>().powercurrent = 7f;
+            GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Enemy>().powercurrent = 7f;
+            GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().powercurrent = 7f;
         }
         if (collision.gameObject.tag == "Enemy2" && leven >= 1 && check == false || collision.gameObject.tag == "Enemy" && leven >= 1 && check == false || collision.gameObject.tag == "Enemy3" && leven >= 1 && check == false || collision.gameObject.tag == "Enemy4" && leven >= 1 && check == false)
         {
             leven--;
+            snelpower = false;
             currenttime2 -= 20f;
             currenttime = starttime;
             timer = true;
