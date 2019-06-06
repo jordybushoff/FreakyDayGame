@@ -1,4 +1,4 @@
-﻿
+﻿/*
 using UnityEngine;
 using System.Collections;
 
@@ -108,7 +108,7 @@ public class PlayerJordy : MonoBehaviour {
 				}else if (Input.GetMouseButtonUp (0)){
 					SmokeParticle.Stop();
 				}
-				*/
+
 		}
 	}
 	
@@ -170,3 +170,4 @@ public class PlayerJordy : MonoBehaviour {
 		} 
 	}
 }
+*/

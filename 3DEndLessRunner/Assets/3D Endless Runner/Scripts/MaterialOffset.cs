@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using System.Collections;
 
 public class MaterialOffset : MonoBehaviour {
@@ -21,3 +21,4 @@ public class MaterialOffset : MonoBehaviour {
 		_Renderer .material.mainTextureOffset = new Vector2 (OffsetPlus,_Renderer.material.mainTextureOffset.y);
 	}
 }
+*/

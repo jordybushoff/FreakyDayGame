@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using System.Collections;
 
 public class LocationCreateObjects : MonoBehaviour {
@@ -43,3 +43,4 @@ public class LocationCreateObjects : MonoBehaviour {
 		TrapNumber = Random.Range (0,Traps.Length);
 	}
 }
+*/
