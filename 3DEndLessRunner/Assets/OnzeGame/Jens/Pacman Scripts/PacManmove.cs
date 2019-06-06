@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class PacManmove : MonoBehaviour
 {
     public float moveSpeed;
@@ -16,32 +15,42 @@ public class PacManmove : MonoBehaviour
     public static int Score = 0;
     public static int leven = 3;
     float currenttime = 0f;
-    float currenttime2 = 0f;
+    public float currenttime2 = 0f;
     float starttime2 = 180f;
     float starttime = 3f;
+    float speedcurrent = 0f;
+    float speedstart = 5f;
+
     bool timer = true;
     bool tijdenable = false;
+    public bool check = false;
+    bool snelpower = false;
     public Text ScoreText;
     public Text tijd;
     public Text Finalscore;
     public GameObject food;
+    public GameObject power;
     public GameObject enemy1;
     public GameObject enemy2;
     public GameObject enemy3;
     public GameObject enemy4;
+    public GameObject steen;
+    public GameObject sneller;
 
     // Use this for initialization
     void Awake()
     {
         playerRotation = GetComponent<Transform>();
-        playerRb = GetComponent<Rigidbody>();              
+        playerRb = GetComponent<Rigidbody>();
         enemy1 = GameObject.FindGameObjectWithTag("Enemy");
         enemy2 = GameObject.FindGameObjectWithTag("Enemy2");
         enemy3 = GameObject.FindGameObjectWithTag("Enemy3");
         enemy4 = GameObject.FindGameObjectWithTag("Enemy4");
-        
+        steen = GameObject.FindGameObjectWithTag("Finish");
+        sneller = GameObject.FindGameObjectWithTag("SnellerSnoep");
+
         currenttime2 = starttime2;
-        currenttime = starttime;
+        currenttime = starttime;       
         tijd.text = currenttime2.ToString("0");
     }
 
@@ -50,13 +59,6 @@ public class PacManmove : MonoBehaviour
     {
         ContinuousMovement();
     }
-
-	IEnumerator Test()
-	{
-		yield return new WaitForSeconds (5);
-		moveSpeed = 4f;
-		MoveRotation();
-	}
 
     void Update()
     {
@@ -81,7 +83,7 @@ public class PacManmove : MonoBehaviour
         if (timer == false)
         {
             SetScoreText();
-            moveSpeed = 4f;            
+            moveSpeed = 4f;
         }
 
         if (tijdenable == true)
@@ -90,21 +92,32 @@ public class PacManmove : MonoBehaviour
             tijd.text = currenttime2.ToString("0");
         }
 
+        if (snelpower == true)
+        {           
+            moveSpeed = 6f;
+            speedcurrent -= 1 * Time.deltaTime;
+
+            if (speedcurrent <= 0)
+            {
+                snelpower = false;
+            }
+        }
+
         MoveRotation();
         if (leven <= 0)
         {
             food = GameObject.FindGameObjectWithTag("Eten");
+            power = GameObject.FindGameObjectWithTag("Destroyer");
             Destroy(food);
+            Destroy(power);
             ScoreText.text = "Defeat!";
             tijdenable = false;
             currenttime2 = 0f;
             tijd.text = currenttime2.ToString();
             moveSpeed = 0f;
 			MovementPackman.Stop ();
-        }     
+        }
     }
-
-
 
     public void ContinuousMovement()
     {
@@ -116,7 +129,7 @@ public class PacManmove : MonoBehaviour
         if (currenttime2 > 0)
         {
             currenttime2--;
-            tijd.text = currenttime2.ToString("0");            
+            tijd.text = currenttime2.ToString("0");
             Score++;
             Finalscore.text = "Finalscore: " + Score.ToString();
         }
@@ -125,7 +138,6 @@ public class PacManmove : MonoBehaviour
             tijd.text = "0";
         }
     }
-
 
     void MoveRotation()
     {
@@ -149,11 +161,9 @@ public class PacManmove : MonoBehaviour
         if (Input.GetKeyDown (KeyCode.RightArrow)) {
 			MovementPackman.Play ();
 			playerRotation.rotation = Quaternion.Euler (0f, 90f, 0f);
-		} 	
+		} 					
    	}
-
-
-
+    
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Eten")
@@ -161,24 +171,43 @@ public class PacManmove : MonoBehaviour
             Score++;
 			SnoepGeluid.Play();
             SetScoreText();
-
         }
-		if (collision.gameObject.tag == "SnellerSnoep")
-		{
-			moveSpeed = 9f;
-			//StartCoroutine (Test ());
-
-			
-		}
-        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Enemy3" || collision.gameObject.tag == "Enemy4" && leven >= 1)
+        if (collision.gameObject.tag == "SnellerSnoep")
         {
-            leven--;
+            Score++;
+            SnoepGeluid.Play();
+            SetScoreText();
+            speedcurrent = speedstart;
+            snelpower = true;
+        }
+        if (collision.gameObject.tag == "Destroyer")
+        {
+            Score++;
+            SnoepGeluid.Play();
+            SetScoreText();
+            check = true;
+            GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>().powerup = true;
+            GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Enemy>().powerup = true;
+            GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Enemy>().powerup = true;
+            GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().powerup = true;
+            GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>().powercurrent = 7f;
+            GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Enemy>().powercurrent = 7f;
+            GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Enemy>().powercurrent = 7f;
+            GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().powercurrent = 7f;
+        }
+        if (collision.gameObject.tag == "Enemy2" && leven >= 1 && check == false || collision.gameObject.tag == "Enemy" && leven >= 1 && check == false || collision.gameObject.tag == "Enemy3" && leven >= 1 && check == false || collision.gameObject.tag == "Enemy4" && leven >= 1 && check == false)
+        {           
+            snelpower = false;
+            currenttime2 -= 20f;
             currenttime = starttime;
             timer = true;
+
             GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>().currenttime = starttime; 
             GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Enemy>().currenttime = starttime; 
             GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Enemy>().currenttime = starttime; 
-            GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().currenttime = starttime; 
+            GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().currenttime = starttime;
+
+            leven--;
         }      
     }
 
@@ -187,16 +216,14 @@ public class PacManmove : MonoBehaviour
         ScoreText.text = "Score: " + Score.ToString();
         if (Score >= 179)
         {
-            tijdenable = false;           
+            tijdenable = false;
             ScoreText.text = "";
-            scorecount();
-            moveSpeed = 0f;
-			MovementPackman.Stop ();
-            this.gameObject.transform.position = new Vector3(0.15f, 0.767f, 1.924f);
+            scorecount();           
             Destroy(enemy1);
             Destroy(enemy2);
             Destroy(enemy3);
             Destroy(enemy4);
+            Destroy(steen);
         }
     }
 }

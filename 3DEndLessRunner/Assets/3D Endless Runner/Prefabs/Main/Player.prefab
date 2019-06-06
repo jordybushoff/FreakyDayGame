@@ -87,10 +87,10 @@ GameObject:
   m_Component:
   - component: {fileID: 442884}
   - component: {fileID: 5461804}
-  - component: {fileID: 11460758}
   - component: {fileID: 6574076}
   - component: {fileID: 9539354}
   - component: {fileID: 8278176}
+  - component: {fileID: 4265993740542811657}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -129,24 +129,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 24
   m_CollisionDetection: 0
---- !u!114 &11460758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd1ed49e320d7aa40815091c92f19f76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurrentPlayerState: 0
-  JumpForce: 80
-  Speed: 120
-  JetPackAudio: {fileID: 8300000, guid: 2591ac1b841cabf4c8d5e4ae50c93dda, type: 3}
-  DieAudio: {fileID: 8300000, guid: 13462b0a12bc7054bb5bdecb7c17ce58, type: 3}
-  SmokeParticle: {fileID: 0}
 --- !u!65 &6574076
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -275,3 +257,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &4265993740542811657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4875dacbb373f974c8eac2c191a00a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentPlayerState: 0
+  JumpForce: 20
+  Speed: 20
+  JetPackAudio: {fileID: 0}
+  DieAudio: {fileID: 8300000, guid: 13462b0a12bc7054bb5bdecb7c17ce58, type: 3}
+  SmokeParticle: {fileID: 0}

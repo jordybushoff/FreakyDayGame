@@ -9,7 +9,7 @@ public enum GameState{
 	InGame,
 	EndGame,
 	PouseGame,
-	Continiue
+
 }
 public class GameManager : MonoBehaviour {
 	public GameState CurrentState = GameState.Start;
@@ -83,7 +83,11 @@ public class GameManager : MonoBehaviour {
 	public IEnumerator ContinueGame(){
 		 
 		_AnimCanvas.SetBool ("EndGame",false);
+
 		_Player.GetCurrentPlayerState (PlayerStates.Ready);
+
+		_Player.GetCurrentPlayerState (PlayerStates2.Ready);
+
 		yield return new WaitForSeconds (1f);
 		TxtCounter.text = "" + 3;
 		yield return new WaitForSeconds (1f);
@@ -104,6 +108,9 @@ public class GameManager : MonoBehaviour {
 
 	public void Btn_Restart(){
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+
+		//GetCurrentState (GameState.Ready);
+
 	}
 
 	public void Btn_Continiue(){
