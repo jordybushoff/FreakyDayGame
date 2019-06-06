@@ -13,7 +13,7 @@ public class PacManmove : MonoBehaviour
 	public AudioSource SnoepGeluid;
 
     public static int Score = 0;
-    public static int leven = 3;
+    public static int leven = 4;
     float currenttime = 0f;
     public float currenttime2 = 0f;
     float starttime2 = 180f;
@@ -106,6 +106,7 @@ public class PacManmove : MonoBehaviour
         MoveRotation();
         if (leven <= 0)
         {
+            GameObject.Find("RestartButton").transform.localScale = new Vector3(1, 1, 1);
             food = GameObject.FindGameObjectWithTag("Eten");
             power = GameObject.FindGameObjectWithTag("Destroyer");
             Destroy(food);
@@ -116,6 +117,10 @@ public class PacManmove : MonoBehaviour
             tijd.text = currenttime2.ToString();
             moveSpeed = 0f;
 			MovementPackman.Stop ();
+        }
+        if (leven >= 1)
+        {
+            GameObject.Find("RestartButton").transform.localScale = new Vector3(0, 0, 0);
         }
     }
 
@@ -208,6 +213,31 @@ public class PacManmove : MonoBehaviour
             GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().currenttime = starttime;
 
             leven--;
+
+            if (leven == 3)
+            {
+                GameObject.Find("heart (1)").transform.localScale = new Vector3(0, 0, 0);
+            }
+
+            if (leven == 2)
+            {
+                GameObject.Find("heart (2)").transform.localScale = new Vector3(0, 0, 0);
+            }
+
+            if (leven == 1)
+            {
+                GameObject.Find("heart (3)").transform.localScale = new Vector3(0, 0, 0);
+                leven--;
+            }
+
+            if (leven == 4)
+            {
+                GameObject.Find("heart (1)").transform.localScale = new Vector3(1, 1, 1);
+
+                GameObject.Find("heart (2)").transform.localScale = new Vector3(1, 1, 1);
+
+                GameObject.Find("heart (3)").transform.localScale = new Vector3(1, 1, 1);
+            }
         }      
     }
 
