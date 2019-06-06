@@ -94,7 +94,7 @@ public class PacManmove : MonoBehaviour
 
         if (snelpower == true)
         {           
-            moveSpeed = 10f;
+            moveSpeed = 6f;
             speedcurrent -= 1 * Time.deltaTime;
 
             if (speedcurrent <= 0)
@@ -196,8 +196,7 @@ public class PacManmove : MonoBehaviour
             GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().powercurrent = 7f;
         }
         if (collision.gameObject.tag == "Enemy2" && leven >= 1 && check == false || collision.gameObject.tag == "Enemy" && leven >= 1 && check == false || collision.gameObject.tag == "Enemy3" && leven >= 1 && check == false || collision.gameObject.tag == "Enemy4" && leven >= 1 && check == false)
-        {
-            leven--;
+        {           
             snelpower = false;
             currenttime2 -= 20f;
             currenttime = starttime;
@@ -206,8 +205,10 @@ public class PacManmove : MonoBehaviour
             GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>().currenttime = starttime; 
             GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Enemy>().currenttime = starttime; 
             GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Enemy>().currenttime = starttime; 
-            GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().currenttime = starttime; 
-        }                     
+            GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().currenttime = starttime;
+
+            leven--;
+        }      
     }
 
     public void SetScoreText()
