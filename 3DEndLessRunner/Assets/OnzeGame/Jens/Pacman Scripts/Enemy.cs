@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         currenttime -= 1 * Time.deltaTime;
-
+        //manier voor currenttime starttime op te lossen bedenken
         if (currenttime <= 0 && powerup == false )
         {            
             agent.speed = Speed;
@@ -64,7 +64,7 @@ public class Enemy : MonoBehaviour
             Speed = 0f;
         } 
         
-       if (powerup == true)
+        if (powerup == true)
         {
             powercurrent -= 1 * Time.deltaTime;
             agent.destination = -target.transform.position;
@@ -101,10 +101,9 @@ public class Enemy : MonoBehaviour
         }
         if (collision.gameObject.tag == "Player" && powerup == true)
         {
-            this.transform.position = spawn1.transform.position;
-            this.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;           
-            this.currenttime = this.starttime;
-            this.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+            transform.position = spawn1.transform.position;
+            GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+            GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
             GameObject.FindGameObjectWithTag("Player").GetComponent<PacManmove>().currenttime2 += 10f;
         }
     }
