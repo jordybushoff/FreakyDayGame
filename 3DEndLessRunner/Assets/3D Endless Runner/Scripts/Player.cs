@@ -4,12 +4,13 @@ using System.Collections;
 
 
 public enum PlayerStates2{
+
 	Start,
 	Ready,
 	Live,
 	Die
-}
 
+}
 public class Player : MonoBehaviour {
 	public PlayerStates2 CurrentPlayerState = PlayerStates2.Start;
 	Rigidbody _Rigidbody;
@@ -236,3 +237,4 @@ public class Player : MonoBehaviour {
         //
 	}
 }
+
