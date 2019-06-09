@@ -13,7 +13,7 @@ public class PacManmove : MonoBehaviour
 	public AudioSource SnoepGeluid;
 
     public static int Score = 0;
-    public static int leven = 4;
+    public static int leven = 3;
     float currenttime = 0f;
     public float currenttime2 = 0f;
     float starttime2 = 180f;
@@ -28,24 +28,35 @@ public class PacManmove : MonoBehaviour
     public Text ScoreText;
     public Text tijd;
     public Text Finalscore;
+    public GameObject pacman;
     public GameObject food;
     public GameObject power;
     public GameObject enemy1;
     public GameObject enemy2;
     public GameObject enemy3;
     public GameObject enemy4;
+    public GameObject spawn1;
+    public GameObject spawn2;
+    public GameObject spawn3;
+    public GameObject spawn4;
     public GameObject steen;
     public GameObject sneller;
+    public AudioSource DeathSound;
 
     // Use this for initialization
     void Awake()
     {
         playerRotation = GetComponent<Transform>();
         playerRb = GetComponent<Rigidbody>();
+        pacman = GameObject.FindGameObjectWithTag("Player");
         enemy1 = GameObject.FindGameObjectWithTag("Enemy");
         enemy2 = GameObject.FindGameObjectWithTag("Enemy2");
         enemy3 = GameObject.FindGameObjectWithTag("Enemy3");
         enemy4 = GameObject.FindGameObjectWithTag("Enemy4");
+        spawn1 = GameObject.FindGameObjectWithTag("Spawn1");
+        spawn2 = GameObject.FindGameObjectWithTag("Spawn2");
+        spawn3 = GameObject.FindGameObjectWithTag("Spawn3");
+        spawn4 = GameObject.FindGameObjectWithTag("Spawn4");
         steen = GameObject.FindGameObjectWithTag("Finish");
         sneller = GameObject.FindGameObjectWithTag("SnellerSnoep");
 
@@ -106,7 +117,7 @@ public class PacManmove : MonoBehaviour
         MoveRotation();
         if (leven <= 0)
         {
-            GameObject.Find("RestartButton").transform.localScale = new Vector3(1, 1, 1);
+            //GameObject.Find("RestartButton").transform.localScale = new Vector3(1, 1, 1);
             food = GameObject.FindGameObjectWithTag("Eten");
             power = GameObject.FindGameObjectWithTag("Destroyer");
             Destroy(food);
@@ -117,10 +128,14 @@ public class PacManmove : MonoBehaviour
             tijd.text = currenttime2.ToString();
             moveSpeed = 0f;
 			MovementPackman.Stop ();
+            GameObject.FindGameObjectWithTag("Enemy").GetComponent<Ghost1>().Speed = 0;
+            GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Ghost2>().Speed = 0;
+            GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Ghost3>().Speed = 0;
+            GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Ghost4>().Speed = 0;
         }
         if (leven >= 1)
         {
-            GameObject.Find("RestartButton").transform.localScale = new Vector3(0, 0, 0);
+           // GameObject.Find("RestartButton").transform.localScale = new Vector3(0, 0, 0);
         }
     }
 
@@ -191,14 +206,14 @@ public class PacManmove : MonoBehaviour
             SnoepGeluid.Play();
             SetScoreText();
             check = true;
-            GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>().powerup = true;
-            GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Enemy>().powerup = true;
-            GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Enemy>().powerup = true;
-            GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().powerup = true;
-            GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>().powercurrent = 7f;
-            GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Enemy>().powercurrent = 7f;
-            GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Enemy>().powercurrent = 7f;
-            GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().powercurrent = 7f;
+            GameObject.FindGameObjectWithTag("Enemy").GetComponent<Ghost1>().powerup = true;
+            GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Ghost2>().powerup = true;
+            GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Ghost3>().powerup = true;
+            GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Ghost4>().powerup = true;
+            GameObject.FindGameObjectWithTag("Enemy").GetComponent<Ghost1>().powercurrent = 7f;
+            GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Ghost2>().powercurrent = 7f;
+            GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Ghost3>().powercurrent = 7f;
+            GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Ghost4>().powercurrent = 7f;
         }
         if (collision.gameObject.tag == "Enemy2" && leven >= 1 && check == false || collision.gameObject.tag == "Enemy" && leven >= 1 && check == false || collision.gameObject.tag == "Enemy3" && leven >= 1 && check == false || collision.gameObject.tag == "Enemy4" && leven >= 1 && check == false)
         {           
@@ -206,13 +221,9 @@ public class PacManmove : MonoBehaviour
             currenttime2 -= 20f;
             currenttime = starttime;
             timer = true;
-
-            GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>().currenttime = starttime; 
-            GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Enemy>().currenttime = starttime; 
-            GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Enemy>().currenttime = starttime; 
-            GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Enemy>().currenttime = starttime;
-
             leven--;
+            enemyrespawn();            
+            DeathSound.Play();
 
             if (leven == 3)
             {
@@ -255,5 +266,29 @@ public class PacManmove : MonoBehaviour
             Destroy(enemy4);
             Destroy(steen);
         }
+    }
+
+    public void enemyrespawn()
+    {
+        GameObject.FindGameObjectWithTag("Enemy").GetComponent<Ghost1>().enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+        GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Ghost2>().enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+        GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Ghost3>().enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+        GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Ghost4>().enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+
+        GameObject.FindGameObjectWithTag("Enemy").GetComponent<Ghost1>().enemy1.transform.position = spawn1.transform.position;
+        GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Ghost2>().enemy2.transform.position = spawn2.transform.position;
+        GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Ghost3>().enemy3.transform.position = spawn3.transform.position;
+        GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Ghost4>().enemy4.transform.position = spawn4.transform.position;
+        pacman.transform.position = new Vector3(0.15f, 0.767f, 1.924f);
+
+        GameObject.FindGameObjectWithTag("Enemy").GetComponent<Ghost1>().enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+        GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Ghost2>().enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+        GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Ghost3>().enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+        GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Ghost4>().enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+
+        GameObject.FindGameObjectWithTag("Enemy").GetComponent<Ghost1>().currenttime = starttime;
+        GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Ghost2>().currenttime = starttime;
+        GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Ghost3>().currenttime = starttime;
+        GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Ghost4>().currenttime = starttime;
     }
 }
