@@ -3,7 +3,20 @@ guid: 99881ec5d84f33a43b867c79be08356f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - MovementPackman: {instanceID: 0}
+  - SnoepGeluid: {instanceID: 0}
+  - ScoreText: {instanceID: 0}
+  - tijd: {instanceID: 0}
+  - Finalscore: {instanceID: 0}
+  - food: {instanceID: 0}
+  - power: {instanceID: 0}
+  - enemy1: {instanceID: 0}
+  - enemy2: {instanceID: 0}
+  - enemy3: {instanceID: 0}
+  - enemy4: {instanceID: 0}
+  - steen: {instanceID: 0}
+  - sneller: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
