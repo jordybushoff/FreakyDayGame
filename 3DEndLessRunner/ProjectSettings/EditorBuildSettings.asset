@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/OnzeGame/Jordy/PACMANjordy.unity
     guid: 3cc36a9c35c24b743a6d327b76286e7c
+  - enabled: 1
+    path: Assets/Pacman/Level2.1.unity
+    guid: f23a260dff1a925418f3679796197d99
   m_configObjects: {}

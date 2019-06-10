@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
@@ -15,9 +16,8 @@ public class Portal : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		other.gameObject.transform.position = spawnPoint.position;
-		GetComponent<AudioSource>().PlayOneShot(TeleportSound);
-	}
+        SceneManager.LoadScene("Level2.1");
+    }
 
     // Update is called once per frame
     void Update()
