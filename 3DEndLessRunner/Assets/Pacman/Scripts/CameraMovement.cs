@@ -9,6 +9,7 @@ public class CameraMovement : MonoBehaviour {
 	 [Range(0.01f, 1.0f)]
 	public float SmoothFactor = 0.5f;
 
+	public bool LookAtPlayer = false;
 
 
 	void Start(){
@@ -20,5 +21,7 @@ public class CameraMovement : MonoBehaviour {
 
 		transform.position = Vector3.Slerp(transform.position, newPos, SmoothFactor);
 
+		if (LookAtPlayer)
+			PlayerTransform.LookAt (PlayerTransform);
 	}
 }
