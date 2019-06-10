@@ -2487,7 +2487,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219797132}
   m_LocalRotation: {x: 0.2520806, y: 0.27157888, z: 0.073940195, w: -0.92586887}
-  m_LocalPosition: {x: 19.70801, y: -17.266327, z: -21.525528}
+  m_LocalPosition: {x: 4.9211445, y: -7.7888927, z: -2.650114}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -48469,11 +48469,6 @@ PrefabInstance:
       propertyPath: enemy4
       value: 
       objectReference: {fileID: 1397432736}
-    - target: {fileID: 7261905247182030441, guid: f0220add37aa1b4429f6f1886e7d6fd6,
-        type: 3}
-      propertyPath: steen
-      value: 
-      objectReference: {fileID: 944751182}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0220add37aa1b4429f6f1886e7d6fd6, type: 3}
 --- !u!1001 &8547298252070472401
