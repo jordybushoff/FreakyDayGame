@@ -11814,27 +11814,40 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340471577}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b6313097c0d04346b57360f71845cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1639828983}
-  enemy1: {fileID: 340471577}
-  enemy2: {fileID: 516291147}
-  enemy3: {fileID: 1785473254}
-  enemy4: {fileID: 1397432736}
-  spawn1: {fileID: 1879006094}
-  spawn2: {fileID: 1888692970}
-  spawn3: {fileID: 2073757379}
-  spawn4: {fileID: 504114093}
-  spawnPacman: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &340471586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340471577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a99441054d72434b8d6bca03067d3de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  enemy1: {fileID: 0}
+  spawn1: {fileID: 0}
   Speed: 3
   currenttime: 0
   starttime: 3
   powercurrent: 0
   powerup: 0
-  DeathSound: {fileID: 1879006096}
+  clone: 0
 --- !u!4 &342051034 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5453285901950069461, guid: 2cc1cf69b67635f40a12685a97f5e587,
@@ -12730,27 +12743,36 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 516291147}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b6313097c0d04346b57360f71845cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1639828983}
-  enemy1: {fileID: 340471577}
-  enemy2: {fileID: 516291147}
-  enemy3: {fileID: 1785473254}
-  enemy4: {fileID: 1397432736}
-  spawn1: {fileID: 1879006094}
-  spawn2: {fileID: 1888692970}
-  spawn3: {fileID: 2073757379}
-  spawn4: {fileID: 504114093}
-  spawnPacman: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &516291156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516291147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aaf64cd9323fc3479e1d2203fd6fcb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  enemy2: {fileID: 0}
+  spawn2: {fileID: 0}
   Speed: 3
+  clone: 0
   currenttime: 0
   starttime: 3
   powercurrent: 0
   powerup: 0
-  DeathSound: {fileID: 1879006096}
 --- !u!4 &518597545 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5453285901950069461, guid: 2cc1cf69b67635f40a12685a97f5e587,
@@ -20728,27 +20750,36 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397432736}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b6313097c0d04346b57360f71845cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1639828983}
-  enemy1: {fileID: 340471577}
-  enemy2: {fileID: 516291147}
-  enemy3: {fileID: 1785473254}
-  enemy4: {fileID: 1397432736}
-  spawn1: {fileID: 1879006094}
-  spawn2: {fileID: 1888692970}
-  spawn3: {fileID: 2073757379}
-  spawn4: {fileID: 504114093}
-  spawnPacman: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1397432745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397432736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea2fa70bfdfa364cb035778fc4691c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  enemy3: {fileID: 0}
+  spawn3: {fileID: 0}
   Speed: 3
+  clone: 0
   currenttime: 0
   starttime: 3
   powercurrent: 0
   powerup: 0
-  DeathSound: {fileID: 1879006096}
 --- !u!1001 &1398669641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28416,12 +28447,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300024, guid: 6958f311ef303164a8c8bdbb4fab2c44, type: 3}
---- !u!1 &1639828983 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7261905247182030438, guid: f0220add37aa1b4429f6f1886e7d6fd6,
-    type: 3}
-  m_PrefabInstance: {fileID: 7261905246654909329}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1640949332 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5453285901950069461, guid: 2cc1cf69b67635f40a12685a97f5e587,
@@ -29965,7 +29990,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1762732065}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -38.7, y: 0, z: -37.6}
+  m_LocalPosition: {x: -38.7, y: -2.6, z: -37.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -30893,27 +30918,36 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785473254}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b6313097c0d04346b57360f71845cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1639828983}
-  enemy1: {fileID: 340471577}
-  enemy2: {fileID: 516291147}
-  enemy3: {fileID: 1785473254}
-  enemy4: {fileID: 1397432736}
-  spawn1: {fileID: 1879006094}
-  spawn2: {fileID: 1888692970}
-  spawn3: {fileID: 2073757379}
-  spawn4: {fileID: 504114093}
-  spawnPacman: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1785473263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785473254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc36ce082472b848a398fb2e56526df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  enemy4: {fileID: 0}
+  spawn4: {fileID: 0}
   Speed: 3
+  clone: 0
   currenttime: 0
   starttime: 3
   powercurrent: 0
   powerup: 0
-  DeathSound: {fileID: 1879006096}
 --- !u!1 &1786631057 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100108, guid: 6958f311ef303164a8c8bdbb4fab2c44,
