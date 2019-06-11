@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Pacman/REALlevel2.unity
+    guid: ca97de75d57816e4a860381a8ac08ee8
+  - enabled: 1
     path: Assets/OnzeGame/Jordy/PACMANjordy.unity
     guid: 3cc36a9c35c24b743a6d327b76286e7c
   - enabled: 1

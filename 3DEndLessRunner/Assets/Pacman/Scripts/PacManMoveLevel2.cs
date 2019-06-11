@@ -259,13 +259,13 @@ public class PacManMoveLevel2 : MonoBehaviour
 		ScoreText.text = "Score: " + Score.ToString();
 		if (Score >= 5)
 		{
-			tijdenable = false;
-			ScoreText.text = "";
-			scorecount();           
+			//tijdenable = false;
+			//ScoreText.text = "";
+			//scorecount();           
 			Destroy(enemy1);
 			Destroy(enemy2);
 			Destroy(enemy3);
-			Destroy(enemy4);
+			//Destroy(enemy4);
 			Destroy(steen);
 		}
 	}
