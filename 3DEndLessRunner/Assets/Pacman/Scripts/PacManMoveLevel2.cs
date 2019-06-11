@@ -257,14 +257,14 @@ public class PacManMoveLevel2 : MonoBehaviour
 	public void SetScoreText()
 	{
 		ScoreText.text = "Score: " + Score.ToString();
-		if (Score >= 5)
+		if (Score >= 262)
 		{
 			//tijdenable = false;
 			//ScoreText.text = "";
 			//scorecount();           
 			Destroy(enemy1);
-			Destroy(enemy2);
-			Destroy(enemy3);
+			//Destroy(enemy2);
+			//Destroy(enemy3);
 			//Destroy(enemy4);
 			Destroy(steen);
 		}
