@@ -257,7 +257,7 @@ public class PacManMoveLevel2 : MonoBehaviour
 	public void SetScoreText()
 	{
 		ScoreText.text = "Score: " + Score.ToString();
-		if (Score >= 262)
+		if (Score >= 5)
 		{
 			//tijdenable = false;
 			//ScoreText.text = "";
