@@ -57,8 +57,8 @@ public class PacManMoveLevel2 : MonoBehaviour
 		spawn1 = GameObject.FindGameObjectWithTag("Spawn1");
 		spawn2 = GameObject.FindGameObjectWithTag("Spawn2");
 		spawn3 = GameObject.FindGameObjectWithTag("Spawn3");
-		spawn4 = GameObject.FindGameObjectWithTag("PacSpawn");
-		PacManSpawn = GameObject.FindGameObjectWithTag("Spawn4");
+		spawn4 = GameObject.FindGameObjectWithTag("Spawn4");
+		PacManSpawn = GameObject.FindGameObjectWithTag("PacSpawn");
 		steen = GameObject.FindGameObjectWithTag("Finish");
 		sneller = GameObject.FindGameObjectWithTag("SnellerSnoep");
 		
@@ -134,6 +134,7 @@ public class PacManMoveLevel2 : MonoBehaviour
 			GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Ghost2>().Speed = 0;
 			GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Ghost3>().Speed = 0;
 			GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Ghost4>().Speed = 0;
+		
 		}
 		if (leven >= 1)
 		{
@@ -224,7 +225,7 @@ public class PacManMoveLevel2 : MonoBehaviour
 			currenttime = starttime;
 			timer = true;
 			leven--;
-			enemyrespawn();            
+			enemyrespawn2();            
 			DeathSound.Play();
 			
 			if (leven == 3)
@@ -263,6 +264,21 @@ public class PacManMoveLevel2 : MonoBehaviour
 			//ScoreText.text = "";
 			//scorecount();           
 			Destroy(enemy1);
+			Destroy(enemy2);
+			Destroy(enemy3);
+			Destroy(enemy4);
+			//Destroy(enemy2);
+			//Destroy(enemy3);
+			//Destroy(enemy4);
+
+		}
+
+		if (Score >= 70)
+		{
+			//tijdenable = false;
+			//ScoreText.text = "";
+			//scorecount();           
+		
 			//Destroy(enemy2);
 			//Destroy(enemy3);
 			//Destroy(enemy4);
@@ -270,12 +286,12 @@ public class PacManMoveLevel2 : MonoBehaviour
 		}
 	}
 	
-	public void enemyrespawn()
+	public void enemyrespawn2()
 	{
-		GameObject.FindGameObjectWithTag("Enemy").GetComponent<Ghost1>().enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-		GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Ghost2>().enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-		GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Ghost3>().enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-		GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Ghost4>().enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+		//GameObject.FindGameObjectWithTag("Enemy").GetComponent<Ghost1>().enemy1.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+		//GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Ghost2>().enemy2.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+		//GameObject.FindGameObjectWithTag("Enemy3").GetComponent<Ghost3>().enemy3.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+		//GameObject.FindGameObjectWithTag("Enemy4").GetComponent<Ghost4>().enemy4.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 		
 		GameObject.FindGameObjectWithTag("Enemy").GetComponent<Ghost1>().enemy1.transform.position = spawn1.transform.position;
 		GameObject.FindGameObjectWithTag("Enemy2").GetComponent<Ghost2>().enemy2.transform.position = spawn2.transform.position;

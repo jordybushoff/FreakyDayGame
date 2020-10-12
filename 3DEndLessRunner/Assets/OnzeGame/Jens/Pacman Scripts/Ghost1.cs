@@ -55,7 +55,7 @@ public class Ghost1 : MonoBehaviour
             if (powercurrent <= 0)
             {
                 powerup = false;
-                GameObject.FindGameObjectWithTag("Player").GetComponent<PacManmove>().check = false;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PacManMoveLevel2>().check = false;
             }
         }
     }
@@ -68,7 +68,7 @@ public class Ghost1 : MonoBehaviour
             if (!clone)
             {
                 GameObject go = (GameObject)(Instantiate(enemy1, new Vector3(-1.12f, 0.75f, -0.12f), Quaternion.identity));
-                GameObject.FindGameObjectWithTag("Player").GetComponent<PacManmove>().currenttime2 += 10f;
+				GameObject.FindGameObjectWithTag("Player").GetComponent<PacManMoveLevel2>().currenttime2 += 10f;
                 go.GetComponent<NavMeshAgent>().enabled = true;
                 go.GetComponent<Ghost1>().enabled = true;
                 clone = true;
